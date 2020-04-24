@@ -1,0 +1,89 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-size: 24px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #666;
+  align-content: center;
+}
+
+
+.pmig1, .welcome-img, .pimg3 {
+  position: relative;
+  /* opacity: .8; */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+/*
+fixed = parallax
+scroll = normal
+*/
+
+  background-attachment: fixed;
+}
+
+
+.welcome-img {
+  background-image: url('/assets/jake-melara-Yh6K2eTr_FY-unsplash.jpg');
+  min-height: 860px;
+}
+
+.pimg3 {
+  background-image: url('/public/assets/pexels-8.jpeg');
+  min-height: 860px;
+}
+
+.section {
+  text-align: center;
+  padding: 50px 80px;
+  height: 200px;
+}
+
+.section-light {
+  background-color: #f4f4f4;
+  color: #666;
+}
+
+.section-dark {
+  background-color: lightskyblue;
+  color: red;
+}
+
+.welcome-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+  font-size: 32px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+
+.welcome-text .border {
+  background-color: #111;
+  color: #fff;
+  padding: 20px;
+  border-radius: 7px;
+}
+
+.welcome-text .border .trans {
+  background-color: transparent;
+}
+
+h1 {
+  align-content: center;
+}
+
+@media(max-width: 568px) {
+   pmig2, pimg3 {
+      background-attachment: scroll;
+  }
+}
+
+.nav-wrapper {
+  background-color: grey;
+}
