@@ -9,5 +9,6 @@ footer {
     position: fixed;
     bottom: 0px;
     height: 40px;   
+    line-height: 2.2;
 }  
 
