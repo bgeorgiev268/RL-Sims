@@ -1,6 +1,6 @@
 .card {
     max-width: 400px;
-    height: 500px;
+    height: 450px;
     margin: 20px;
     border-radius: 7px;
     border: 2px solid black;
@@ -13,6 +13,7 @@ img {
 
 .btn-small {
     border-radius: 5px;
+    margin-top: 7px;
 }
 
 .card-title:hover {

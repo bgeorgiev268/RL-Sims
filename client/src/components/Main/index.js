@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/NavBar";
+import Title from '../Title/index.js'
+import Card from '../Card/index' 
 import "./style.css";
 import Footer from '../Footer/index';
 // import Card from "../Card/index";
@@ -45,11 +47,25 @@ export class Main extends Component {
 
         {/* This is section One */}
         <div className="pimg1">
-          <h1 className="text-center">RL Sims</h1>
+          <h1 className="project text-center">RL Sims</h1>
         </div>
 
-        <section className="section section-dark">
-          <h2>Section One</h2>
+       <section className="section">
+        <div className="row" id="section">
+          <Title>Hiking</Title>
+          {this.state.hiking.map(hike => (
+            <Card
+              saveCard={this.saveCard}
+              id={hike.id}
+              key={hike.id}
+              name={hike.name}
+              image={hike.image}
+              url={hike.url}
+              location={hike.location}
+              star={hike.star}
+            />
+          ))}
+        </div>
         </section>
 
 
@@ -62,7 +78,7 @@ export class Main extends Component {
           </div>
         </div>
 
-        <section className="section section-dark">
+        <section className="section">
           <h2>Section Two</h2>
         </section>
 
@@ -76,7 +92,7 @@ export class Main extends Component {
           </div>
         </div>
 
-        <section className="section section-dark">
+        <section className="section">
           <h2>Section Three</h2>
         </section>
 
@@ -90,7 +106,7 @@ export class Main extends Component {
           </div>
         </div>
 
-        <section className="section section-dark">
+        <section className="section">
           <h2>Section Four</h2>
         </section>
 
