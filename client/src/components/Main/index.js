@@ -42,13 +42,9 @@ export class Main extends Component {
       <div>
         <Navbar />
 
+        {/* This is section One */}
         <div className="pimg1">
-       
-           <h1 className="text-center">RL Sims</h1>
-          
-              
-
-      
+          <h1 className="text-center">RL Sims</h1>
         </div>
 
         <section className="section section-dark">
@@ -56,6 +52,7 @@ export class Main extends Component {
         </section>
 
 
+        {/* This is section Two */}
         <div className="pimg2">
           <div className="ptext">
             <span className="border trans">
@@ -68,6 +65,8 @@ export class Main extends Component {
           <h2>Section Two</h2>
         </section>
 
+
+        {/* This is section Three */}
         <div className="pimg3">
           <div className="ptext">
             <span className="border trans">
@@ -80,6 +79,8 @@ export class Main extends Component {
           <h2>Section Three</h2>
         </section>
 
+
+        {/* This is section Four */}
         <div className="pimg4">
           <div className="ptext">
             <span className="border trans">
@@ -88,11 +89,11 @@ export class Main extends Component {
           </div>
         </div>
 
-        
         <section className="section section-dark">
           <h2>Section Four</h2>
         </section>
 
+        {/* This is the final image for parallax */}
         <div className="pimg5">
           <div className="ptext">
             <span className="border trans">
