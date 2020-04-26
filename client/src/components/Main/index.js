@@ -14,7 +14,8 @@ export class Main extends Component {
   constructor() {
     super();
     this.state = {
-      hiking: []
+      hiking: [],
+      riding: []
     }
   }
   componentDidMount() {
@@ -39,6 +40,31 @@ export class Main extends Component {
 
       })
   }
+
+
+  componentWillMount() {
+    fetch('https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
+      .then(results => {
+        return results.json();
+      }).then(data => {
+        var bikeTrail = [];
+        for (var i = 0; i < data.trails.length; i++) {
+          bikeTrail.push({
+            name: data.trails[i].name,
+            location: data.trails[i].location,
+            star: data.trails[i].stars,
+            url: data.trails[i].url,
+            image: data.trails[i].imgMedium,
+            id: i + 1
+          })
+        }
+        this.setState({ riding: bikeTrail })
+        console.log(data)
+        console.log(data.trails[0].name)
+
+      })
+  }
+
 
   render() {
     return (
@@ -79,7 +105,21 @@ export class Main extends Component {
         </div>
 
         <section className="section">
-          <h2>Section Two</h2>
+        <div className="row" id="section">
+          <Title>Mountain Biking</Title>
+          {this.state.riding.map(ride => (
+            <Card
+              saveCard={this.saveCard}
+              id={ride.id}
+              key={ride.id}
+              name={ride.name}
+              image={ride.image}
+              url={ride.url}
+              location={ride.location}
+              star={ride.star}
+            />
+          ))}
+        </div>
         </section>
 
 
