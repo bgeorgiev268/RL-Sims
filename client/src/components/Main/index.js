@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/NavBar";
-import "./style.css"
+import "./style.css";
+import Footer from '../Footer/index';
 // import Card from "../Card/index";
 // import Title from "../Title/index.js"
 
@@ -101,6 +102,9 @@ export class Main extends Component {
   </span>
           </div>
         </div>
+
+        {/* Footer */}
+        <Footer />
 
       </div>
     );
