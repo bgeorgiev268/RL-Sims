@@ -1,12 +1,24 @@
 .card {
     max-width: 400px;
-    height: 400px;
-    position: relative;
-    float: left;
+    height: 500px;
     margin: 20px;
+    border-radius: 7px;
+    border: 2px solid black;
 }
 
 img {
     width: 400px;
-    height: 200px;
+    height:250px;
+}
+
+.btn-small {
+    border-radius: 5px;
+}
+
+.card-title:hover {
+color: black;
+}
+
+.col {
+    justify-content: center;
 }

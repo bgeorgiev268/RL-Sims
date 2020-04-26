@@ -6,13 +6,11 @@ body, html {
   font-weight: 400;
   line-height: 1.8em;
   color: #666;
-  align-content: center;
 }
 
-
-.pmig1, .welcome-img, .pimg3 {
+.pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
   position: relative;
-  /* opacity: .8; */
+  opacity: 1;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -25,21 +23,34 @@ scroll = normal
   background-attachment: fixed;
 }
 
+.pimg1 {
+  background-image: url('../Images/hike-2.jpg');
+  height: 1100px;
+}
 
-.welcome-img {
-  background-image: url('/assets/jake-melara-Yh6K2eTr_FY-unsplash.jpg');
-  min-height: 860px;
+.pimg2 {
+  background-image: url('../Images/bike-2.jpg');
+  min-height: 900px;
 }
 
 .pimg3 {
-  background-image: url('/public/assets/pexels-8.jpeg');
-  min-height: 860px;
+  background-image: url('../Images/view-1.jpg');
+  min-height: 900px;
+}
+
+.pimg4 {
+  background-image: url('../Images/view-2.jpg');
+  min-height: 900px;
+}
+
+.pimg5 {
+  background-image: url('../Images/par1.jpg');
+  min-height: 1000px;
 }
 
 .section {
   text-align: center;
   padding: 50px 80px;
-  height: 200px;
 }
 
 .section-light {
@@ -48,11 +59,11 @@ scroll = normal
 }
 
 .section-dark {
-  background-color: lightskyblue;
-  color: red;
+  background-color: #282e34;
+  color: #ddd;
 }
 
-.welcome-text {
+.ptext {
   position: absolute;
   top: 50%;
   width: 100%;
@@ -63,24 +74,26 @@ scroll = normal
   text-transform: uppercase;
 }
 
-.welcome-text .border {
-  background-color: #111;
+.ptext .border {
   color: #fff;
   padding: 20px;
   border-radius: 7px;
 }
 
-.welcome-text .border .trans {
+.ptext .border .trans {
   background-color: transparent;
 }
 
-h1 {
-  align-content: center;
-}
-
 @media(max-width: 568px) {
-   pmig2, pimg3 {
+  .pmig1, pmig2, pimg3 {
       background-attachment: scroll;
   }
 }
 
+h1 {
+  color: rgb(163, 81, 163);
+  font-weight: 600;
+  margin: 0;
+  padding-top: 7%;
+
+}
