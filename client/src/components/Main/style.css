@@ -23,7 +23,7 @@ scroll = normal
 }
 
 .pimg1 {
-  background-image: url('../Images/hike-2.jpg');
+  background-image: url('../Images/hiking-2.jpg');
   height: 1100px;
 }
 
@@ -50,7 +50,7 @@ scroll = normal
 .section {
   text-align: center;
   padding: 20px;
-  background-color: steelblue;
+  background-color: lightskyblue;
   color: crimson;
 }
 
@@ -76,7 +76,7 @@ scroll = normal
 }
 
 @media(max-width: 568px) {
-  .pmig1, pmig2, pimg3 {
+  .pimg1, pimg2, pimg3, pimg4, pimg5 {
       background-attachment: scroll;
   }
 }
