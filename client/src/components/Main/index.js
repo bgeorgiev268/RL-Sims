@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/NavBar";
 import Title from '../Title/index.js'
-import Card from '../Card/index' 
+import Card from '../Card/index'
 import "./style.css";
 import Footer from '../Footer/index';
-// import Card from "../Card/index";
-// import Title from "../Title/index.js"
 
 
 
@@ -15,9 +13,11 @@ export class Main extends Component {
     super();
     this.state = {
       hiking: [],
-      riding: []
+      riding: [],
+      climbing: []
     }
   }
+
   componentDidMount() {
     fetch('https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
       .then(results => {
@@ -39,10 +39,7 @@ export class Main extends Component {
         console.log(data.trails[0].name)
 
       })
-  }
 
-
-  componentWillMount() {
     fetch('https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
       .then(results => {
         return results.json();
@@ -63,8 +60,29 @@ export class Main extends Component {
         console.log(data.trails[0].name)
 
       })
-  }
 
+      fetch('https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=40.03&lon=-105.25&maxDistance=10&minDiff=5.6&maxDiff=5.10&maxResults=4&key=200734128-d1406dd362d69ba4d097a47e42427bd8')
+      .then(results => {
+        return results.json();
+      }).then(data => {
+        var climbRoute = [];
+        for (var i = 0; i < data.routes.length; i++) {
+          climbRoute.push({
+            name: data.routes[i].name,
+            location: data.routes[i].location,
+            star: data.routes[i].stars,
+            url: data.routes[i].url,
+            image: data.routes[i].imgMedium,
+            id: i + 1
+          })
+        }
+        this.setState({ climbing: climbRoute })
+        console.log(data)
+        console.log(data.routes[0].name)
+
+      })
+
+  }
 
   render() {
     return (
@@ -76,22 +94,22 @@ export class Main extends Component {
           <h1 className="project text-center">RL Sims</h1>
         </div>
 
-       <section className="section">
-        <div className="row" id="section">
-          <Title>Hiking</Title>
-          {this.state.hiking.map(hike => (
-            <Card
-              saveCard={this.saveCard}
-              id={hike.id}
-              key={hike.id}
-              name={hike.name}
-              image={hike.image}
-              url={hike.url}
-              location={hike.location}
-              star={hike.star}
-            />
-          ))}
-        </div>
+        <section className="section">
+          <div className="row" id="section">
+            <Title>Hiking</Title>
+            {this.state.hiking.map(hike => (
+              <Card
+                saveCard={this.saveCard}
+                id={hike.id}
+                key={hike.id}
+                name={hike.name}
+                image={hike.image}
+                url={hike.url}
+                location={hike.location}
+                star={hike.star}
+              />
+            ))}
+          </div>
         </section>
 
 
@@ -105,21 +123,21 @@ export class Main extends Component {
         </div>
 
         <section className="section">
-        <div className="row" id="section">
-          <Title>Mountain Biking</Title>
-          {this.state.riding.map(ride => (
-            <Card
-              saveCard={this.saveCard}
-              id={ride.id}
-              key={ride.id}
-              name={ride.name}
-              image={ride.image}
-              url={ride.url}
-              location={ride.location}
-              star={ride.star}
-            />
-          ))}
-        </div>
+          <div className="row" id="section">
+            <Title>Mountain Biking</Title>
+            {this.state.riding.map(ride => (
+              <Card
+                saveCard={this.saveCard}
+                id={ride.id}
+                key={ride.id}
+                name={ride.name}
+                image={ride.image}
+                url={ride.url}
+                location={ride.location}
+                star={ride.star}
+              />
+            ))}
+          </div>
         </section>
 
 
@@ -133,7 +151,21 @@ export class Main extends Component {
         </div>
 
         <section className="section">
-          <h2>Section Three</h2>
+          <div className="row" id="section">
+            <Title>Climbing</Title>
+            {this.state.climbing.map(climb => (
+              <Card
+                saveCard={this.saveCard}
+                id={climb.id}
+                key={climb.id}
+                name={climb.name}
+                image={climb.image}
+                url={climb.url}
+                location={climb.location}
+                star={climb.star}
+              />
+            ))}
+          </div>
         </section>
 
 

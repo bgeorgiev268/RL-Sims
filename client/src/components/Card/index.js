@@ -9,7 +9,7 @@ const {name, image, location, star, url} = props;
   <div className="card hoverable z-depth-2 center-align">
     <div className="card-image">
       <img src={image} alt={name} />
-       <button className="btn-small waves-effect waves-light blue pulse">save</button>
+       <button className="btn-small waves-effect waves-light blue">save</button>
     </div>
     <div className="card-content">
     <a rel="noopener noreferrer" href={url} target="_blank" className="card-title">{name}</a> 
