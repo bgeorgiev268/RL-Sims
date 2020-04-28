@@ -38,7 +38,7 @@ scroll = normal
 }
 
 .pimg4 {
-  background-image: url('../Images/view-2.jpg');
+  background-image: url('../Images/snow-1.jpg');
   min-height: 900px;
 }
 
@@ -50,7 +50,7 @@ scroll = normal
 .section {
   text-align: center;
   padding: 20px;
-  background-color: rgba(175, 182, 187, 0.63);
+  background-color: rgba(113, 142, 163, 0.733);
   color: crimson;
 }
 
