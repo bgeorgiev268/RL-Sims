@@ -3,7 +3,8 @@
     height: 450px;
     margin: 20px;
     border-radius: 7px;
-    border: 2px solid black;
+    border: 2px solid gray;
+    background-color: #282e34;
 }
 
 img {

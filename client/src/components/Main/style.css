@@ -1,9 +1,9 @@
 body, html {
   height: 100%;
   margin: 0;
-  font-size: 18px;
+  font-size: 15px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   color: #666;
 }
 
@@ -50,7 +50,7 @@ scroll = normal
 .section {
   text-align: center;
   padding: 20px;
-  background-color: lightskyblue;
+  background-color: rgba(175, 182, 187, 0.63);
   color: crimson;
 }
 
@@ -86,4 +86,8 @@ scroll = normal
   font-weight: 600;
   margin: 0;
   padding-top: 7%;
+}
+
+p {
+  color: white;
 }

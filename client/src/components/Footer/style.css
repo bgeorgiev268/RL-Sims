@@ -3,12 +3,11 @@ footer {
     background: #666666;
     color: #fff;
     color: #ccc;
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
     width: 100%; 
-    position: fixed;
     bottom: 0px;
-    height: 40px;   
-    line-height: 2.2;
+    height: 70px;   
+    line-height: 3;
 }  
 
