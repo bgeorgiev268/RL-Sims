@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import "./style.css"
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import "./style.css";
 
 export class Navbar extends Component {
     render() {
@@ -7,11 +8,11 @@ export class Navbar extends Component {
             <div className="navbar-fixed">
     <nav>
       <div className="nav-wrapper">
-        <a href="#!" className="brand-logo center">Logo</a>
+        <Link to="/" className="brand-logo center">Logo</Link>
         <ul className="right hide-on-med-and-down">
-          <li><a href="#!">Stuff</a></li>
-          <li><a href="#!">Stuff</a></li>
-          <li><a href="#!">More Stuff</a></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/User">User</Link></li>
+          <li><Link to="/Favorites">Favorites</Link></li>
         </ul>
       </div>
     </nav>
