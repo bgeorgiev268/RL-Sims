@@ -14,9 +14,10 @@ export class Main extends Component {
       hiking: [],
       riding: [],
       climbing: [],
-      skiing: []
+      skiing: [],
     }
   }
+
 
   componentDidMount() {
     fetch('https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
@@ -61,7 +62,7 @@ export class Main extends Component {
 
       })
 
-      fetch('https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=40.03&lon=-105.25&maxDistance=10&minDiff=5.6&maxDiff=5.10&maxResults=4&key=200734128-d1406dd362d69ba4d097a47e42427bd8')
+    fetch('https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=40.03&lon=-105.25&maxDistance=10&minDiff=5.6&maxDiff=5.10&maxResults=4&key=200734128-d1406dd362d69ba4d097a47e42427bd8')
       .then(results => {
         return results.json();
       }).then(data => {
@@ -82,7 +83,7 @@ export class Main extends Component {
 
       })
 
-      fetch('https://www.powderproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=200&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
+    fetch('https://www.powderproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=200&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
       .then(results => {
         return results.json();
       }).then(data => {
@@ -109,13 +110,13 @@ export class Main extends Component {
   render() {
     return (
       <div>
-        <Navbar />
-
-        {/* This is section One */}
+     
+        {/* This is section One image */}
         <div className="pimg1">
           <h1 className="project text-center">RL Sims</h1>
         </div>
 
+        {/* This is section One */}
         <section className="section">
           <div className="row" id="section">
             <Title>Hiking</Title>
@@ -135,7 +136,7 @@ export class Main extends Component {
         </section>
 
 
-        {/* This is section Two */}
+        {/* This is section Two image */}
         <div className="pimg2">
           <div className="ptext">
             <span className="border trans">
@@ -144,6 +145,7 @@ export class Main extends Component {
           </div>
         </div>
 
+        {/* This is section Two */}
         <section className="section">
           <div className="row" id="section">
             <Title>Mountain Biking</Title>
@@ -163,7 +165,7 @@ export class Main extends Component {
         </section>
 
 
-        {/* This is section Three */}
+        {/* This is section Three image */}
         <div className="pimg3">
           <div className="ptext">
             <span className="border trans">
@@ -172,6 +174,7 @@ export class Main extends Component {
           </div>
         </div>
 
+        {/* This is section Three */}
         <section className="section">
           <div className="row" id="section">
             <Title>Climbing</Title>
@@ -191,7 +194,7 @@ export class Main extends Component {
         </section>
 
 
-        {/* This is section Four */}
+        {/* This is section Four image */}
         <div className="pimg4">
           <div className="ptext">
             <span className="border trans">
@@ -200,6 +203,7 @@ export class Main extends Component {
           </div>
         </div>
 
+        {/* This is section Four */}
         <section className="section">
           <div className="row" id="section">
             <Title>Powder</Title>
@@ -228,7 +232,7 @@ export class Main extends Component {
         </div>
 
         {/* Footer */}
-        <Footer />
+        <Footer url='home' />
 
       </div>
     );
