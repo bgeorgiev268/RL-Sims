@@ -8,13 +8,13 @@ import Footer from '../Footer/index';
 
 
 export class Main extends Component {
-
   constructor() {
     super();
     this.state = {
       hiking: [],
       riding: [],
-      climbing: []
+      climbing: [],
+      skiing: []
     }
   }
 
@@ -81,6 +81,28 @@ export class Main extends Component {
         console.log(data.routes[0].name)
 
       })
+
+      fetch('https://www.powderproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=200&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
+      .then(results => {
+        return results.json();
+      }).then(data => {
+        var skiTrail = [];
+        for (var i = 0; i < data.trails.length; i++) {
+          skiTrail.push({
+            name: data.trails[i].name,
+            location: data.trails[i].location,
+            star: data.trails[i].stars,
+            url: data.trails[i].url,
+            image: data.trails[i].imgMedium,
+            id: i + 1
+          })
+        }
+        this.setState({ skiing: skiTrail })
+        console.log(data)
+        console.log(data.trails[0].name)
+
+      })
+
 
   }
 
@@ -179,7 +201,21 @@ export class Main extends Component {
         </div>
 
         <section className="section">
-          <h2>Section Four</h2>
+          <div className="row" id="section">
+            <Title>Powder</Title>
+            {this.state.skiing.map(ski => (
+              <Card
+                saveCard={this.saveCard}
+                id={ski.id}
+                key={ski.id}
+                name={ski.name}
+                image={ski.image}
+                url={ski.url}
+                location={ski.location}
+                star={ski.star}
+              />
+            ))}
+          </div>
         </section>
 
         {/* This is the final image for parallax */}
