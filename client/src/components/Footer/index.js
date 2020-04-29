@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './style.css';
 
-export class index extends Component {
-    render() {
+function Footer(props) {
+  
         return (
 
-            <footer>
+            <footer className={`footer-${props.url}`}>
                 <span>
                     &#169; Copyright Team Liquid Productions
                   </span>
             </footer>
         )
     }
-}
 
-export default index
+
+export default Footer

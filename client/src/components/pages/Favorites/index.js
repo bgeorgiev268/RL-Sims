@@ -9,10 +9,12 @@ export class Favorites extends Component {
             <div className="pimg7">
                 <Navbar />
                 <h1>Favorites Page</h1>
-                <Footer />
+                <Footer url="favorite" />
             </div>
         )
     }
 }
 
 export default Favorites
+
+

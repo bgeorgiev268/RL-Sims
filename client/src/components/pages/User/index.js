@@ -9,7 +9,7 @@ export class User extends Component {
             <div>
                 <Navbar />
                 <h1>User Page</h1>
-                <Footer />
+                <Footer url="user" />
             </div>
         )
     }

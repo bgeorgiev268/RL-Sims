@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
-import axios from 'axios'
+import axios from 'axios';
 import Main from "./components/Main";
 // import User from './components/pages/User/index';
-import Favorites from './components/pages/Favorites/index';
+// import Favorites from './components/pages/Favorites/index';
 import Signup from "./components/SignUp/sign-up"
 import LoginForm from './components/Login/login-form';
 import Navbar from './components/Navbar/NavBar'
