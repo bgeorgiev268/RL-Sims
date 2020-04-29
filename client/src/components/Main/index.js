@@ -31,7 +31,8 @@ export class Main extends Component {
             star: data.trails[i].stars,
             url: data.trails[i].url,
             image: data.trails[i].imgMedium,
-            id: i + 1
+            id: i + 1,
+            activity: "hiking"
           })
         }
         this.setState({ hiking: trailName })
@@ -52,7 +53,8 @@ export class Main extends Component {
             star: data.trails[i].stars,
             url: data.trails[i].url,
             image: data.trails[i].imgMedium,
-            id: i + 1
+            id: i + 1,
+            activity: "riding"
           })
         }
         this.setState({ riding: bikeTrail })
@@ -73,7 +75,8 @@ export class Main extends Component {
             star: data.routes[i].stars,
             url: data.routes[i].url,
             image: data.routes[i].imgMedium,
-            id: i + 1
+            id: i + 1,
+            activity: "climbing"
           })
         }
         this.setState({ climbing: climbRoute })
@@ -94,7 +97,8 @@ export class Main extends Component {
             star: data.trails[i].stars,
             url: data.trails[i].url,
             image: data.trails[i].imgMedium,
-            id: i + 1
+            id: i + 1,
+            activity: "skiing"
           })
         }
         this.setState({ skiing: skiTrail })
