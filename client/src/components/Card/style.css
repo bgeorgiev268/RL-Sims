@@ -4,7 +4,7 @@
     margin: 20px;
     border-radius: 7px;
     border: 2px solid gray;
-    background-color: #282e34;
+    background-color: #5c646d;
 }
 
 img {
@@ -18,7 +18,7 @@ img {
 }
 
 .card-title:hover {
-color: black;
+color: red;
 }
 
 .col {
