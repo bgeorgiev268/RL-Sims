@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import "./style.css";
+import Footer from "../Footer"
 
 class Signup extends Component {
 	constructor() {
@@ -33,7 +35,10 @@ class Signup extends Component {
 				if (!response.data.errmsg) {
 					console.log('successful signup')
 					this.setState({ //redirect to login page
+						username: "",
+						password: "",
 						redirectTo: '/login'
+						
 					})
 				} else {
 					console.log('username already taken')
@@ -48,7 +53,8 @@ class Signup extends Component {
 
 render() {
 	return (
-		<div className="SignupForm">
+		<div className="userDiv2">
+		<div className="SignupForm userContainer">
 			<h4>Sign up</h4>
 			<form className="form-horizontal">
 				<div className="form-group">
@@ -89,6 +95,8 @@ render() {
 					>Sign up</button>
 				</div>
 			</form>
+		</div>
+		<Footer url="user" />
 		</div>
 
 	)
