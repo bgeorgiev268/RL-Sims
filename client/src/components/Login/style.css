@@ -1,0 +1,25 @@
+.userContainer {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 120px;
+    background: rgba(105, 105, 105, 0.541);
+    color: white;
+
+}
+
+h4, .form-label {
+    color: white;
+}
+
+.userDiv {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background: url("../Images/hike-2.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
