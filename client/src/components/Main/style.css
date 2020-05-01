@@ -50,7 +50,7 @@ scroll = normal
 .section {
   text-align: center;
   padding: 20px;
-  background-color: rgba(113, 142, 163, 0.733);
+  background-color: #051622;
   color: crimson;
 }
 
@@ -82,12 +82,25 @@ scroll = normal
 }
 
 .project {
-  color: rgb(163, 81, 163);
+  color: #DEB992;
   font-weight: 600;
   margin: 0;
   padding-top: 7%;
+  text-shadow: black 2px;
 }
 
 p {
   color: white;
+}
+
+.title {
+  color: #DEB992;
+  font-family: brandon-grotesque, sans-serif;
+  font-weight: 100;
+  font-size: 8em;
+  font-style: normal;
+}
+
+.align {
+  align-content: right;
 }
