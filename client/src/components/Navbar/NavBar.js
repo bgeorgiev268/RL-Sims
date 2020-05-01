@@ -37,6 +37,7 @@ class Navbar extends Component {
         <nav className="navbar " id="nav-container">
           <div className="col-4" >
             {loggedIn ? (
+              <div className="align">
               <section className="navbar-section">
                 <Link to="/" className="btn btn-link text-secondary">
                     <span className="text-secondary">Home</span>
@@ -46,8 +47,10 @@ class Navbar extends Component {
                   </Link>
                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
                   <span className="text-secondary">logout</span></Link>
+                  
 
               </section>
+              </div>
             ) : (
                 <section className="navbar-section">
                   <Link to="/" className="btn btn-link text-secondary">

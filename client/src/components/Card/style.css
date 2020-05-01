@@ -2,7 +2,7 @@
     max-width: 400px;
     height: 450px;
     margin: 20px;
-    border-radius: 7px;
+    border-radius:15px;
     border: 2px solid gray;
     background-color: #5c646d;
 }
@@ -10,6 +10,7 @@
 img {
     width: 400px;
     height:250px;
+    
 }
 
 .btn-small {
@@ -17,10 +18,19 @@ img {
     margin-top: 7px;
 }
 
+.card-title {
+    color: #DEB992;
+} 
+
 .card-title:hover {
-color: red;
+color: black;
 }
 
 .col {
     justify-content: center;
+}
+
+.card .card-image img {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
 }
