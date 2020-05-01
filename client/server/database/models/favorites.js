@@ -10,16 +10,16 @@ var FavoritesSchema = new Schema({
     type: String
   },
   activity: {
-      type: String
+    type: String
   },
   star: {
-      type: Number
+    type: Number
   },
   url: {
-      type: String
+    type: String
   },
   image: {
-      type: String
+    type: String
   }
 });
 
