@@ -4,7 +4,7 @@ import Title from '../Title/index.js'
 import Card from '../Card/index'
 import "./style.css";
 import Footer from '../Footer/index';
-
+// import "../../../../.env";
 
 
 export class Main extends Component {
@@ -15,12 +15,50 @@ export class Main extends Component {
       riding: [],
       climbing: [],
       skiing: [],
+      lat: "",
+      lon: ""
     }
   }
 
 
   componentDidMount() {
-    fetch('https://www.hikingproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
+    this.ipRequest();
+    this.apiCall();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // this.apiCall();
+    if (this.state.lat !== prevState.lat || this.state.lon !== prevState.lon) {
+      this.apiCall();
+    }
+  }
+
+  ipRequest() {
+    const IP_KEY = process.env.REACT_APP_IP_KEY;
+    fetch("http://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
+      .then(results => {
+        return results.json();
+      })
+      .then(res => {
+        console.log("IP results");
+        console.log(res.latitude + " " + res.longitude)
+        this.setState({ lat: res.latitude, lon: res.longitude })
+        // this.apiCall();
+        // console.log(this.state.lat);
+      });
+  }
+
+
+
+
+  apiCall() {
+    // console.log(this.state.lat + 'AI)UHJOIHASUJSPIHPIFJASPIOJD)A')
+    const lat = this.state.lat ? this.state.lat : "40.0274";
+    const lon = this.state.lon ? this.state.lon : "-105.2519";
+    const KEY = process.env.REACT_APP_ACTIVITY_KEY;
+    const MNT_KEY = process.env.REACT_APP_MOUNTAIN_KEY;
+
+    fetch('https://www.hikingproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=10&maxResults=4&key=' + KEY)
       .then(results => {
         return results.json();
       }).then(data => {
@@ -37,12 +75,10 @@ export class Main extends Component {
           })
         }
         this.setState({ hiking: trailName })
-        console.log(data)
-        console.log(data.trails[0].name)
 
       })
 
-    fetch('https://www.mtbproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=10&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
+    fetch('https://www.mtbproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=10&maxResults=4&key=' + KEY)
       .then(results => {
         return results.json();
       }).then(data => {
@@ -59,20 +95,20 @@ export class Main extends Component {
           })
         }
         this.setState({ riding: bikeTrail })
-        console.log(data)
-        console.log(data.trails[0].name)
 
       })
 
-    fetch('https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=40.03&lon=-105.25&maxDistance=10&minDiff=5.6&maxDiff=5.10&maxResults=4&key=200734128-d1406dd362d69ba4d097a47e42427bd8')
+    fetch('https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=' + lat + '&lon=' + lon + '&maxDistance=20&minDiff=5.6&maxDiff=5.10&maxResults=4&key=' + MNT_KEY)
       .then(results => {
         return results.json();
       }).then(data => {
+        console.log("STUFF@@!#$!@")
+        console.log(data.routes)
         var climbRoute = [];
         for (var i = 0; i < data.routes.length; i++) {
           climbRoute.push({
             name: data.routes[i].name,
-            location: data.routes[i].location,
+            location: data.routes[i].location[2] + ", " + data.routes[i].location[0],
             star: data.routes[i].stars,
             url: data.routes[i].url,
             image: data.routes[i].imgMedium,
@@ -81,12 +117,10 @@ export class Main extends Component {
           })
         }
         this.setState({ climbing: climbRoute })
-        console.log(data)
-        console.log(data.routes[0].name)
 
       })
 
-    fetch('https://www.powderproject.com/data/get-trails?lat=40.0274&lon=-105.2519&maxDistance=200&maxResults=4&key=200734128-f28df197b25c568ae8f8d080e196f6f4')
+    fetch('https://www.powderproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=100&maxResults=4&key=' + KEY)
       .then(results => {
         return results.json();
       }).then(data => {
@@ -102,19 +136,16 @@ export class Main extends Component {
             activity: "skiing"
           })
         }
+        console.log("ski trails: ", skiTrail);
         this.setState({ skiing: skiTrail })
-        console.log(data)
-        console.log(data.trails[0].name)
 
       })
-
-
   }
 
   render() {
     return (
       <div>
-     
+
         {/* This is section One image */}
         <div className="pimg1">
           <h1 className="project text-center">RL Sims</h1>
@@ -211,18 +242,20 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Powder</Title>
-            {this.state.skiing.map(ski => (
-              <Card
-                saveCard={this.saveCard}
-                id={ski.id}
-                key={ski.id}
-                name={ski.name}
-                image={ski.image}
-                url={ski.url}
-                location={ski.location}
-                star={ski.star}
-              />
-            ))}
+            {this.state.skiing.length ?
+              this.state.skiing.map(ski => (
+                <Card
+                  saveCard={this.saveCard}
+                  id={ski.id}
+                  key={ski.id}
+                  name={ski.name}
+                  image={ski.image}
+                  url={ski.url}
+                  location={ski.location}
+                  star={ski.star}
+                />
+              )) : <h3>No results in your area.</h3>
+            }
           </div>
         </section>
 
