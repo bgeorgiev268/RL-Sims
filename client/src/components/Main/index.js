@@ -143,9 +143,6 @@ export class Main extends Component {
         {/* This is section Two image */}
         <div className="pimg2">
           <div className="ptext">
-            <span className="border trans">
-              Image 2 Text
-  </span>
           </div>
         </div>
 
@@ -172,9 +169,6 @@ export class Main extends Component {
         {/* This is section Three image */}
         <div className="pimg3">
           <div className="ptext">
-            <span className="border trans">
-              Image 3 Text
-  </span>
           </div>
         </div>
 
@@ -201,9 +195,6 @@ export class Main extends Component {
         {/* This is section Four image */}
         <div className="pimg4">
           <div className="ptext">
-            <span className="border trans">
-              Image 4 Text
-  </span>
           </div>
         </div>
 
@@ -229,9 +220,7 @@ export class Main extends Component {
         {/* This is the final image for parallax */}
         <div className="pimg5">
           <div className="ptext">
-            <span className="border trans">
-              Image 5 Text
-  </span>
+ 
           </div>
         </div>
 
