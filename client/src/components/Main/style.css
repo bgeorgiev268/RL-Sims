@@ -52,6 +52,7 @@ scroll = normal
   padding: 20px;
   background-color: #051622;
   color: crimson;
+  opacity: .9;
 }
 
 .ptext {
@@ -76,7 +77,7 @@ scroll = normal
 }
 
 @media(max-width: 568px) {
-  .pimg1, pimg2, pimg3, pimg4, pimg5 {
+  .pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
       background-attachment: scroll;
   }
 }
@@ -103,4 +104,36 @@ p {
 
 .align {
   align-content: right;
+}
+
+.owl-prev {
+  width: 25px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  margin-left: -20px;
+  display: block !important;
+  border:0px solid black;
+  color: white;
+  font-size: 100px;
+}
+
+.owl-next {
+  width: 25px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  right: -25px;
+  display: block !important;
+  border:0px solid black;
+  color: white;
+}
+.owl-prev i, .owl-next i {transform : scale(1,6); color: #ccc;}
+
+span {
+  font-size: 60px;
+}
+
+.spanElement {
+  font-size: 18px;
 }

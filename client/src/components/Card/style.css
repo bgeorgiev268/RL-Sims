@@ -34,3 +34,21 @@ color: black;
     border-top-left-radius: 15px !important;
     border-top-right-radius: 15px !important;
 }
+
+.card {
+    display: inline-block;
+    vertical-align: middle;
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    margin: 10px;
+    transition-duration: 0.3s;
+    transition-property: box-shadow, transform;
+  }
+
+.card:hover,
+.card:focus,
+.card:active {
+  box-shadow: 1px 10px 10px -10px rgba(0, 0, 24, 0.5);
+  transform: scale(1.05);
+  border-radius: 15p;
+}

@@ -40,13 +40,13 @@ class Navbar extends Component {
               <div className="align">
               <section className="navbar-section">
                 <Link to="/" className="btn btn-link text-secondary">
-                    <span className="text-secondary">Home</span>
+                    <span className="text-secondary spanElement">Home</span>
                   </Link>
                 <Link to="/favorites" className="btn btn-link">
-                    <span className="text-secondary">Favorites</span>
+                    <span className="text-secondary spanElement">Favorites</span>
                   </Link>
                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-                  <span className="text-secondary">logout</span></Link>
+                  <span className="text-secondary spanElement">logout</span></Link>
                   
 
               </section>
@@ -54,13 +54,13 @@ class Navbar extends Component {
             ) : (
                 <section className="navbar-section">
                   <Link to="/" className="btn btn-link text-secondary">
-                    <span className="text-secondary">Home</span>
+                    <span className="text-secondary spanElement">Home</span>
                   </Link>
                   <Link to="/login" className="btn btn-link text-secondary">
-                    <span className="text-secondary">Login</span>
+                    <span className="text-secondary spanElement">Login</span>
                   </Link>
                   <Link to="/signup" className="btn btn-link">
-                    <span className="text-secondary">Sign Up</span>
+                    <span className="text-secondary spanElement">Sign Up</span>
                   </Link>
                 </section>
               )}

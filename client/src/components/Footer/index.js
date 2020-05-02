@@ -6,7 +6,7 @@ function Footer(props) {
         return (
 
             <footer className={`footer-${props.url}`}>
-                <span>
+                <span className="spanElement">
                     &#169; Copyright Team Liquid Productions
                   </span>
             </footer>
