@@ -50,12 +50,13 @@ scroll = normal
 .section {
   text-align: center;
   padding: 20px;
-  background-color: #051622;
+  background-color: #051622e0;
+  /* background-color: transparent; */
   color: crimson;
   /* opacity: .9; */
 }
 
-.ptext {
+/* .ptext {
   position: absolute;
   top: 50%;
   width: 100%;
@@ -74,7 +75,7 @@ scroll = normal
 
 .ptext .border .trans {
   background-color: transparent;
-}
+} */
 
 @media(max-width: 568px) {
   .pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
