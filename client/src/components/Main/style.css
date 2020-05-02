@@ -50,8 +50,7 @@ scroll = normal
 .section {
   text-align: center;
   padding: 20px;
-  background-color: #051622e0;
-  /* background-color: transparent; */
+
   color: crimson;
   /* opacity: .9; */
 }
@@ -67,11 +66,11 @@ scroll = normal
   text-transform: uppercase;
 }
 
-.ptext .border {
+/* .ptext .border {
   color: #fff;
   padding: 20px;
   border-radius: 7px;
-}
+} */
 
 .ptext .border .trans {
   background-color: transparent;
@@ -91,9 +90,9 @@ scroll = normal
   text-shadow: black 2px;
 }
 
-p {
+/* p {
   color: white;
-}
+} */
 
 .title {
   color: #DEB992;
@@ -129,7 +128,7 @@ p {
   border:0px solid black;
   color: white;
 }
-.owl-prev i, .owl-next i {transform : scale(1,6); color: #ccc;}
+.owl-prev i, .owl-next i {transform : scale(1,6); color:transparent;}
 
 span {
   font-size: 60px;
