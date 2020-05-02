@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Navbar from "../Navbar/NavBar";
 import Title from '../Title/index.js'
-import Card from '../Card/index'
+import Card from '../Card/index';
+import OwlCarousel from 'react-owl-carousel';
 import "./style.css";
 import Footer from '../Footer/index';
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel/dist/assets/owl.theme.default.css';
 // import "../../../../.env";
 
 
@@ -19,7 +22,6 @@ export class Main extends Component {
       lon: ""
     }
   }
-
 
   componentDidMount() {
     this.ipRequest();
@@ -58,7 +60,7 @@ export class Main extends Component {
     const KEY = process.env.REACT_APP_ACTIVITY_KEY;
     const MNT_KEY = process.env.REACT_APP_MOUNTAIN_KEY;
 
-    fetch('https://www.hikingproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=10&maxResults=4&key=' + KEY)
+    fetch('https://www.hikingproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=50&maxResults=16&key=' + KEY)
       .then(results => {
         return results.json();
       }).then(data => {
@@ -78,7 +80,7 @@ export class Main extends Component {
 
       })
 
-    fetch('https://www.mtbproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=10&maxResults=4&key=' + KEY)
+    fetch('https://www.mtbproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=50&maxResults=16&key=' + KEY)
       .then(results => {
         return results.json();
       }).then(data => {
@@ -98,7 +100,7 @@ export class Main extends Component {
 
       })
 
-    fetch('https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=' + lat + '&lon=' + lon + '&maxDistance=20&minDiff=5.6&maxDiff=5.10&maxResults=4&key=' + MNT_KEY)
+    fetch('https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=' + lat + '&lon=' + lon + '&maxDistance=50&minDiff=5.6&maxDiff=5.10&maxResults=16&key=' + MNT_KEY)
       .then(results => {
         return results.json();
       }).then(data => {
@@ -120,7 +122,7 @@ export class Main extends Component {
 
       })
 
-    fetch('https://www.powderproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=100&maxResults=4&key=' + KEY)
+    fetch('https://www.powderproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=50&maxResults=16&key=' + KEY)
       .then(results => {
         return results.json();
       }).then(data => {
@@ -155,18 +157,28 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Hiking</Title>
-            {this.state.hiking.map(hike => (
-              <Card
-                saveCard={this.saveCard}
-                id={hike.id}
-                key={hike.id}
-                name={hike.name}
-                image={hike.image}
-                url={hike.url}
-                location={hike.location}
-                star={hike.star}
-              />
-            ))}
+            <OwlCarousel items={5}
+              className='owl-theme'
+              loop
+              nav
+              autoplay
+              freeDrag
+              autoplayHoverPause
+              autoplayTimeout={3500}
+              margin={2} >
+              {this.state.hiking.map(hike => (
+                <Card
+                  saveCard={this.saveCard}
+                  id={hike.id}
+                  key={hike.id}
+                  name={hike.name}
+                  image={hike.image}
+                  url={hike.url}
+                  location={hike.location}
+                  star={hike.star}
+                />
+              ))}
+            </OwlCarousel>
           </div>
         </section>
 
@@ -181,18 +193,28 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Mountain Biking</Title>
-            {this.state.riding.map(ride => (
-              <Card
-                saveCard={this.saveCard}
-                id={ride.id}
-                key={ride.id}
-                name={ride.name}
-                image={ride.image}
-                url={ride.url}
-                location={ride.location}
-                star={ride.star}
-              />
-            ))}
+            <OwlCarousel items={5}
+              className='owl-theme'
+              loop
+              nav
+              autoplay
+              freeDrag
+              autoplayHoverPause
+              autoplayTimeout={3500}
+              margin={2} >
+              {this.state.riding.map(ride => (
+                <Card
+                  saveCard={this.saveCard}
+                  id={ride.id}
+                  key={ride.id}
+                  name={ride.name}
+                  image={ride.image}
+                  url={ride.url}
+                  location={ride.location}
+                  star={ride.star}
+                />
+              ))}
+            </OwlCarousel>
           </div>
         </section>
 
@@ -207,18 +229,28 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Climbing</Title>
-            {this.state.climbing.map(climb => (
-              <Card
-                saveCard={this.saveCard}
-                id={climb.id}
-                key={climb.id}
-                name={climb.name}
-                image={climb.image}
-                url={climb.url}
-                location={climb.location}
-                star={climb.star}
-              />
-            ))}
+            <OwlCarousel items={5}
+              className='owl-theme'
+              loop
+              nav
+              autoplay
+              freeDrag
+              autoplayHoverPause
+              autoplayTimeout={3500}
+              margin={2} >
+              {this.state.climbing.map(climb => (
+                <Card
+                  saveCard={this.saveCard}
+                  id={climb.id}
+                  key={climb.id}
+                  name={climb.name}
+                  image={climb.image}
+                  url={climb.url}
+                  location={climb.location}
+                  star={climb.star}
+                />
+              ))}
+            </OwlCarousel>
           </div>
         </section>
 
@@ -233,27 +265,37 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Powder</Title>
-            {this.state.skiing.length ?
-              this.state.skiing.map(ski => (
-                <Card
-                  saveCard={this.saveCard}
-                  id={ski.id}
-                  key={ski.id}
-                  name={ski.name}
-                  image={ski.image}
-                  url={ski.url}
-                  location={ski.location}
-                  star={ski.star}
-                />
-              )) : <h3>No results in your area.</h3>
-            }
+            <OwlCarousel items={5}
+              className='owl-theme'
+              loop
+              nav
+              autoplay
+              freeDrag
+              autoplayHoverPause
+              autoplayTimeout={3500}
+              margin={2} >
+              {this.state.skiing.length ?
+                this.state.skiing.map(ski => (
+                  <Card
+                    saveCard={this.saveCard}
+                    id={ski.id}
+                    key={ski.id}
+                    name={ski.name}
+                    image={ski.image}
+                    url={ski.url}
+                    location={ski.location}
+                    star={ski.star}
+                  />
+                )): <h3>No results in your area.</h3>
+              }
+                 </OwlCarousel>  
           </div>
         </section>
 
         {/* This is the final image for parallax */}
         <div className="pimg5">
           <div className="ptext">
- 
+
           </div>
         </div>
 
