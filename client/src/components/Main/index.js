@@ -122,7 +122,7 @@ export class Main extends Component {
 
       })
 
-    fetch('https://www.powderproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=50&maxResults=16&key=' + KEY)
+    fetch('https://www.powderproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=200&maxResults=16&key=' + KEY)
       .then(results => {
         return results.json();
       }).then(data => {

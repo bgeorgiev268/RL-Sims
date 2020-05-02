@@ -52,7 +52,7 @@ scroll = normal
   padding: 20px;
   background-color: #051622;
   color: crimson;
-  opacity: .9;
+  /* opacity: .9; */
 }
 
 .ptext {
