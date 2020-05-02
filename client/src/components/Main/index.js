@@ -265,17 +265,18 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Powder</Title>
-            <OwlCarousel items={5}
-              className='owl-theme'
-              loop
-              nav
-              autoplay
-              freeDrag
-              autoplayHoverPause
-              autoplayTimeout={3500}
-              margin={2} >
+            
               {this.state.skiing.length ?
-                this.state.skiing.map(ski => (
+                <OwlCarousel items={5}
+                className='owl-theme'
+                loop
+                nav
+                autoplay
+                freeDrag
+                autoplayHoverPause
+                autoplayTimeout={3500}
+                margin={2} >
+                {this.state.skiing.map(ski => (
                   <Card
                     saveCard={this.saveCard}
                     id={ski.id}
@@ -286,9 +287,12 @@ export class Main extends Component {
                     location={ski.location}
                     star={ski.star}
                   />
-                )): <h3>No results in your area.</h3>
+                  
+                ))};
+                </OwlCarousel>
+                : <h3>No results in your area.</h3>
               }
-                 </OwlCarousel>  
+                  
           </div>
         </section>
 
