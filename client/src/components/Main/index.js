@@ -2,13 +2,46 @@ import React, { Component } from "react";
 import Navbar from "../Navbar/NavBar";
 import Title from '../Title/index.js'
 import Card from '../Card/index';
-import OwlCarousel from 'react-owl-carousel';
-import "./style.css";
-import Footer from '../Footer/index';
+import OwlCarousel from 'react-owl-carousel2';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import "./style.css";
+import Footer from '../Footer/index';
+
+
 // import "../../../../.env";
 
+const options = {
+  items: 5,
+  nav: true,
+  autoplay: true,
+  autoplayHoverPause: true,
+  autoplayTimeout: 3500,
+  loop: true,
+  margin: 0,
+  responsive: {
+    600: {
+      items: 1,
+      nav: true
+    },
+    800: {
+      items: 2,
+      nav: true
+    },
+    1000: {
+      items: 3,
+      nav: true
+    },
+    1200: {
+      items: 4,
+      nav: true
+    },
+    1600: {
+      items: 5,
+      nav: true
+    }
+  }
+};
 
 export class Main extends Component {
   constructor() {
@@ -21,7 +54,7 @@ export class Main extends Component {
       lat: "",
       lon: ""
     }
-  }
+  };
 
   componentDidMount() {
     this.ipRequest();
@@ -157,15 +190,7 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Hiking</Title>
-            <OwlCarousel items={5}
-              className='owl-theme'
-              loop
-              nav
-              autoplay
-              freeDrag
-              autoplayHoverPause
-              autoplayTimeout={3500}
-              margin={2} >
+            <OwlCarousel ref="car" options={options}>
               {this.state.hiking.map(hike => (
                 <Card
                   saveCard={this.saveCard}
@@ -193,15 +218,7 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Mountain Biking</Title>
-            <OwlCarousel items={5}
-              className='owl-theme'
-              loop
-              nav
-              autoplay
-              freeDrag
-              autoplayHoverPause
-              autoplayTimeout={3500}
-              margin={2} >
+            <OwlCarousel ref="car" options={options}>
               {this.state.riding.map(ride => (
                 <Card
                   saveCard={this.saveCard}
@@ -229,15 +246,7 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Climbing</Title>
-            <OwlCarousel items={5}
-              className='owl-theme'
-              loop
-              nav
-              autoplay
-              freeDrag
-              autoplayHoverPause
-              autoplayTimeout={3500}
-              margin={2} >
+            <OwlCarousel ref="car" options={options}>
               {this.state.climbing.map(climb => (
                 <Card
                   saveCard={this.saveCard}
@@ -265,17 +274,9 @@ export class Main extends Component {
         <section className="section">
           <div className="row" id="section">
             <Title>Powder</Title>
-            
-              {this.state.skiing.length ?
-                <OwlCarousel items={5}
-                className='owl-theme'
-                loop
-                nav
-                autoplay
-                freeDrag
-                autoplayHoverPause
-                autoplayTimeout={3500}
-                margin={2} >
+
+            {this.state.skiing.length ?
+              <OwlCarousel ref="car" options={options}>
                 {this.state.skiing.map(ski => (
                   <Card
                     saveCard={this.saveCard}
@@ -287,12 +288,11 @@ export class Main extends Component {
                     location={ski.location}
                     star={ski.star}
                   />
-                  
                 ))};
                 </OwlCarousel>
-                : <h3>No results in your area.</h3>
-              }
-                  
+              : <h3>No results in your area.</h3>
+            }
+
           </div>
         </section>
 
