@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Navbar from "../Navbar/NavBar";
 import Title from '../Title/index.js'
 import Card from '../Card/index';
 import OwlCarousel from 'react-owl-carousel2';
@@ -20,7 +19,7 @@ const options = {
   loop: true,
   margin: 0,
   responsive: {
-    600: {
+    0: {
       items: 1,
       nav: true
     },
