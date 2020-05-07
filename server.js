@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === "production") {
   // Connect to the Mongo DB
    mongoose.connect(
 	process.env.MONGODB_URI ||
-	 'mongodb://admin:admin1!@ds111082.mlab.com:11082/heroku_1d1rv3p2' ,
+	 'mongodb://admin:Password1@ds237308.mlab.com:37308/heroku_kt4xf5mz' ,
 	// 'mongodb://localhost:27017/simple-mern-passport',
 	{ useNewUrlParser: true }
    );
