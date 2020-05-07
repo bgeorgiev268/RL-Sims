@@ -19,6 +19,20 @@ app.use(
 )
 app.use(bodyParser.json())
 
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static("client/build"));
+  }
+  
+  
+  
+  // Connect to the Mongo DB
+   mongoose.connect(
+	process.env.MONGODB_URI ||
+	 'mongodb://admin:admin1!@ds111082.mlab.com:11082/heroku_1d1rv3p2' ,
+	// 'mongodb://localhost:27017/simple-mern-passport',
+	{ useNewUrlParser: true }
+   );
+
 // Sessions
 app.use(
 	session({
