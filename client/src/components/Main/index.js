@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "../Navbar/NavBar";
+// import Navbar from "../Navbar/NavBar";
 import Title from '../Title/index.js'
 import Card from '../Card/index';
 import OwlCarousel from 'react-owl-carousel';
