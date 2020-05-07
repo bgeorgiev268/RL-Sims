@@ -16,9 +16,10 @@ router.get('/', (req, res, next) => {
   }
 })
 
-// router.get('*', function(request, response) {
-//   response.sendFile(path.resolve(__dirname, '../client/', 'index.html'));
-// });
+router.get('*', function(request, response) {
+  response.sendFile(path.resolve(__dirname, '../client/', 'index.html'));
+});
+
 router.use(function(req, res) {
   res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
