@@ -4,7 +4,11 @@ body, html {
   font-size: 15px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 500;
-  color: #666;
+  background: url("../Images/hike-2.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
@@ -50,33 +54,12 @@ scroll = normal
 .section {
   text-align: center;
   padding: 20px;
-
   color: crimson;
-  /* opacity: .9; */
+  background-color: rgba(0, 0, 0, 0.76);
 }
 
-/* .ptext {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-  font-size: 32px;
-  letter-spacing: 8px;
-  text-transform: uppercase;
-}
 
-/* .ptext .border {
-  color: #fff;
-  padding: 20px;
-  border-radius: 7px;
-} */
-
-.ptext .border .trans {
-  background-color: transparent;
-} */
-
-@media(max-width: 568px) {
+@media screen and(max-width: 568px) {
   .pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
       background-attachment: scroll;
   }
@@ -90,9 +73,6 @@ scroll = normal
   text-shadow: black 2px;
 }
 
-/* p {
-  color: white;
-} */
 
 .title {
   color: #DEB992;
@@ -105,30 +85,6 @@ scroll = normal
 .align {
   align-content: right;
 }
-
-.owl-prev {
-  width: 25px;
-  height: 100px;
-  position: absolute;
-  top: 40%;
-  margin-left: -20px;
-  display: block !important;
-  border:0px solid black;
-  color: white;
-  font-size: 100px;
-}
-
-.owl-next {
-  width: 25px;
-  height: 100px;
-  position: absolute;
-  top: 40%;
-  right: -25px;
-  display: block !important;
-  border:0px solid black;
-  color: white;
-}
-.owl-prev i, .owl-next i {transform : scale(1,6); color:transparent;}
 
 span {
   font-size: 60px;
