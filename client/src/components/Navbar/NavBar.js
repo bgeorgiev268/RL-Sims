@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import "./style.css";
-import { Redirect } from 'react-router-dom'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 class Navbar extends Component {

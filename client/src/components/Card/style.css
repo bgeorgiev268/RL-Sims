@@ -5,6 +5,7 @@
     border-radius:15px;
     border: 2px solid gray;
     background-color: #5c646d;
+    color: seashell;
 }
 
 img {
@@ -26,14 +27,7 @@ img {
 
 
 @media (max-width: 1980px){
-    /* .card .card-title {
-        font-size: 14px;
-    }
 
-    p {
-        font-size: 8px;
-    } */
-    
     .card-title {
         overflow: hidden;
         white-space: nowrap;
