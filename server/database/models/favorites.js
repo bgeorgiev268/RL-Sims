@@ -3,20 +3,25 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var FavoritesSchema = new Schema({
-  name: {
+  user: {
     type: String
+  },
+  name: {
+    type: String,
+    unique: true
   },
   location: {
-    type: String
-  },
-  activity: {
-    type: String
+    type: String,
+
   },
   star: {
-    type: Number
+    type: Number,
+
   },
   url: {
-    type: String
+    type: String,
+    unique: true
+
   },
   image: {
     type: String

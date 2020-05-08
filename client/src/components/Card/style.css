@@ -17,7 +17,7 @@ img {
 .btn-small {
     border-radius: 5px;
     margin-top: 7px;
-    display: none;
+    /* display: none; */
 }
 
 .card-title {

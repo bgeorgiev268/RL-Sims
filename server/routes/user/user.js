@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const User = require("../../database/models/user")
+const Fav = require("../../database/models/favorites")
 const passport = require('../../passport')
 
 router.post('/', (req, res) => {
@@ -28,6 +29,8 @@ router.post('/', (req, res) => {
         }
     })
 })
+
+
 
 router.post(
     '/login',
