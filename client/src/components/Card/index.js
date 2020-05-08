@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./style.css";
-// import db from "../../../../controllers/favController"
+import axios from "axios";
 
 class Card extends Component {
 
@@ -12,14 +12,28 @@ class Card extends Component {
   addFav(event) {
     event.preventDefault();
 
+    axios.post("/favorites", {
+      user: this.props.username,
+      name: this.props.name,
+      location: this.props.location,
+      star: this.props.star,
+      url: this.props.url,
+      image: this.props.image
+    }).then(res => console.log("success!"))
+    .catch(error => {
+      console.log('login error: ')
+      console.log(error);
+
+    })
+
     // db.create()
-    console.log({
+    console.log({ Favorites: {
       user: this.props.username,
       name: this.props.name,
       location: this.props.location,
       star: this.props.star,
       url: this.props.url
-    });
+    }});
   };
 
 

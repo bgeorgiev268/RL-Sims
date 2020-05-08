@@ -7,6 +7,9 @@ class Navbar extends Component {
   constructor(props) {
     super(props)
     this.logout = this.logout.bind(this)
+    this.state = {
+      username: ''
+    }
   }
 
   logout(event) {
@@ -25,10 +28,11 @@ class Navbar extends Component {
     })
   }
 
+
   render() {
     const loggedIn = this.props.loggedIn;
     console.log('navbar render, props: ')
-    console.log(this.props);
+    console.log(this.props.username, "AIHF)IHA)IHD)IH)F*UA)SU)U)*U!#)*U)AHSD)AHJ");
 
     return (
       <div>

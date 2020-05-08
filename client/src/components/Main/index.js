@@ -192,8 +192,7 @@ export class Main extends Component {
             <OwlCarousel ref="car" options={options}>
               {this.state.hiking.map(hike => (
                 <Card
-                  username={this.state.username}
-                  saveCard={this.saveCard}
+                  username={this.props.username}
                   id={hike.id}
                   key={hike.id}
                   name={hike.name}
@@ -221,7 +220,7 @@ export class Main extends Component {
             <OwlCarousel ref="car" options={options}>
               {this.state.riding.map(ride => (
                 <Card
-                  saveCard={this.saveCard}
+                  username={this.props.username}
                   id={ride.id}
                   key={ride.id}
                   name={ride.name}
@@ -249,7 +248,7 @@ export class Main extends Component {
             <OwlCarousel ref="car" options={options}>
               {this.state.climbing.map(climb => (
                 <Card
-                  saveCard={this.saveCard}
+                  username={this.props.username}
                   id={climb.id}
                   key={climb.id}
                   name={climb.name}
@@ -279,7 +278,7 @@ export class Main extends Component {
               <OwlCarousel ref="car" options={options}>
                 {this.state.skiing.map(ski => (
                   <Card
-                    saveCard={this.saveCard}
+                    username={this.props.username}
                     id={ski.id}
                     key={ski.id}
                     name={ski.name}

@@ -36,11 +36,11 @@ class App extends Component {
       console.log('Get user response: ')
       console.log(response.data)
       if (response.data.user) {
-        console.log('Get User: There is a user saved in the server session: ')
-
+        console.log('Get User: There is a user saved in the server session: ' + response.data.user.username)
+        const user = response.data.user.username;
         this.setState({
           loggedIn: true,
-          username: response.data.user.username
+          username: user
         })
       } else {
         console.log('Get user: no user');
@@ -55,11 +55,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        <Navbar username={this.state.username} updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn }
         {/* Routes to different components */}
-          <Route exact path="/" render={props => (
+          <Route exact path="/" render={() => (
             <Main username={this.state.username} />
           )} />
           <Route path="/login" render={() =>
