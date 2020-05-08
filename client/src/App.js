@@ -59,7 +59,9 @@ class App extends Component {
         {/* greet user if logged in: */}
         {this.state.loggedIn }
         {/* Routes to different components */}
-          <Route exact path="/" component={Main} />
+          <Route exact path="/" render={props => (
+            <Main username={this.state.username} />
+          )} />
           <Route path="/login" render={() =>
             <LoginForm
               updateUser={this.updateUser}

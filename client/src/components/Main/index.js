@@ -43,15 +43,16 @@ const options = {
 };
 
 export class Main extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       hiking: [],
       riding: [],
       climbing: [],
       skiing: [],
       lat: "",
-      lon: ""
+      lon: "",
+      username: this.props.username
     }
   };
 
@@ -81,7 +82,6 @@ export class Main extends Component {
         // console.log(this.state.lat);
       });
   }
-
 
 
 
@@ -192,6 +192,7 @@ export class Main extends Component {
             <OwlCarousel ref="car" options={options}>
               {this.state.hiking.map(hike => (
                 <Card
+                  username={this.state.username}
                   saveCard={this.saveCard}
                   id={hike.id}
                   key={hike.id}
