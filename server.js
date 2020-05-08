@@ -6,7 +6,7 @@ const dbConnection = require("./server/database/index");
 const MongoStore = require("connect-mongo")(session);
 const passport = require("./server/passport/index");
 const app = express();
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
 const mongoose = require("mongoose")
 // Route requires
 const routes = require("./server/routes");
