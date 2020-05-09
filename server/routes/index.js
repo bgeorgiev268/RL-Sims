@@ -8,6 +8,7 @@ router.use("/user", userRoutes);
 
 router.get('/', (req, res, next) => {
   console.log('===== user!!======')
+  console.log("heroku is why I drink....")
   res.sendFile(path.join(__dirname, "../client/public/index.html"))
   console.log(req.user)
   if (req.user) {
