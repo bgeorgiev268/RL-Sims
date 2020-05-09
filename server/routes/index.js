@@ -17,11 +17,11 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('*', function(request, response) {
-  response.sendFile("../client/publci/index.html");
+  response.sendFile(path.resolve(__dirname, '../client/', 'index.html'));
 });
 
 router.use(function(req, res) {
-  res.sendFile("../client/publci/index.html");
+  res.sendFile(path.join(__dirname, "../client/public/index.html"));
 });
 
 module.exports = router;
