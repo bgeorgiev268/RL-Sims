@@ -8,6 +8,7 @@ router.use("/user", userRoutes);
 
 router.get('/', (req, res, next) => {
   console.log('===== user!!======')
+  res.sendFile(path.join(__dirname, "../client/public/index.html"))
   console.log(req.user)
   if (req.user) {
       res.json({ user: req.user })
