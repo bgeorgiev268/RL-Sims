@@ -24,14 +24,17 @@ if (process.env.NODE_ENV === "production") {
   }
   
   
-  
-  // Connect to the Mongo DB
-   mongoose.connect(
+
+// Connect to the Mongo DB
+mongoose.connect(
 	process.env.MONGODB_URI ||
-	 'mongodb://admin:Password1@ds237308.mlab.com:37308/heroku_kt4xf5mz' ,
+	'mongodb://admin:Password1@ds237308.mlab.com:37308/heroku_kt4xf5mz',
 	// 'mongodb://localhost:27017/simple-mern-passport',
-	{ useNewUrlParser: true }
-   );
+	{
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	}
+);
 
 // Sessions
 app.use(
