@@ -21,7 +21,7 @@ router.get('/', (req, res, next) => {
 // });
 
 router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "../client/public/index.html"));
+  res.sendFile("../client/publci/index.html");
 });
 
 module.exports = router;
