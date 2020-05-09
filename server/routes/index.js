@@ -16,6 +16,8 @@ router.get('/', (req, res, next) => {
   }
 })
 
+
+
 // router.get('*', function(request, response) {
 //   response.sendFile(path.resolve(__dirname, '../client/', 'index.html'));
 // });
