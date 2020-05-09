@@ -1,7 +1,8 @@
 const express = require('express')
 const router = express.Router()
-const User = require('../database/models/user')
-const passport = require('../passport')
+const User = require("../../database/models/user")
+const Fav = require("../../database/models/favorites")
+const passport = require('../../passport')
 
 router.post('/', (req, res) => {
     console.log('user signup');
@@ -28,6 +29,8 @@ router.post('/', (req, res) => {
         }
     })
 })
+
+
 
 router.post(
     '/login',
@@ -66,6 +69,15 @@ router.post('/logout', (req, res) => {
 })
 
 router.get('/favorites', (req, res, next) => {
+    console.log('===== user!!======')
+    console.log(req.user)
+    if (req.user) {
+        res.json({ user: req.user })
+    } else {
+        res.json({ user: null })
+    }
+})
+router.get('/profile:user', (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)
     if (req.user) {

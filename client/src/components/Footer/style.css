@@ -1,8 +1,8 @@
 /*footer*/
 
 .footer-home {
-    background: #666666;
-    color: #ccc;
+    background: black;
+    color:#DEB992 ;
     font-size: 24px;
     text-align: center;
     width: 100%; 
@@ -12,25 +12,29 @@
 }
 
 .footer-favorite {
-    background: #666666;
-    color: #ccc;
+    background: black;
+    color: #DEB992;
     font-size: 24px;
     text-align: center;
     width: 100%; 
     bottom: 0px;
     height: 60px;   
-    line-height: 3;
+    line-height: 2.5;
     position: fixed;
 }
 
 .footer-user {
-    background: #666666;
-    color: #ccc;
+    background: black;
+    color: #DEB992;
     font-size: 24px;
     text-align: center;
     width: 100%; 
     bottom: 0px;
     height: 60px;   
-    line-height: 3;
+    line-height: 2.5;
     position: fixed;
+}
+
+.johnCena {
+    color: #DEB992;
 }

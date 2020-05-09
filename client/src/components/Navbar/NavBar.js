@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import "./style.css";
-import { Redirect } from 'react-router-dom'
-import { Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 class Navbar extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.logout = this.logout.bind(this)
+    this.state = {
+      username: ''
+    }
   }
 
   logout(event) {
@@ -26,10 +28,11 @@ class Navbar extends Component {
     })
   }
 
+
   render() {
     const loggedIn = this.props.loggedIn;
     console.log('navbar render, props: ')
-    console.log(this.props);
+    console.log(this.props.username, "AIHF)IHA)IHD)IH)F*UA)SU)U)*U!#)*U)AHSD)AHJ");
 
     return (
       <div>
@@ -43,7 +46,7 @@ class Navbar extends Component {
                     <span className="text-secondary spanElement">Home</span>
                   </Link>
                 <Link to="/favorites" className="btn btn-link">
-                    <span className="text-secondary spanElement">Favorites</span>
+                    <span className="text-secondary spanElement"><span className="spanElement">{this.props.username}'s</span> Favorites</span>
                   </Link>
                 <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
                   <span className="text-secondary spanElement">logout</span></Link>

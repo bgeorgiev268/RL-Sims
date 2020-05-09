@@ -1,10 +1,11 @@
 .card {
-    max-width: 400px;
+    width: 15vw;
     height: 450px;
     margin: 20px;
     border-radius:15px;
     border: 2px solid gray;
     background-color: #5c646d;
+    color: seashell;
 }
 
 img {
@@ -16,11 +17,30 @@ img {
 .btn-small {
     border-radius: 5px;
     margin-top: 7px;
+    /* display: none; */
 }
 
 .card-title {
     color: #DEB992;
 } 
+
+
+
+@media (max-width: 1980px){
+
+    .card-title {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 200px;
+    }
+
+    .card:hover .card-title {
+        overflow: visible;
+        white-space: normal;
+        width: auto;
+    }
+}
 
 .card-title:hover {
 color: black;
