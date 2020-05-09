@@ -8,6 +8,7 @@ import Main from "./components/Main";
 import Signup from "./components/SignUp/sign-up"
 import LoginForm from './components/Login/login-form';
 import Navbar from './components/Navbar/NavBar'
+import Favorites from "./components/Favorites/index";
 
 
 class App extends Component {
@@ -74,7 +75,9 @@ class App extends Component {
               signup={this.signup}
             />}
         />
-          {/* <Route path="/favorites" component={Favorites} /> */}
+          <Route path="/favorites" render={() => (
+            <Favorites username={this.state.username} />
+          )} />
         </div>
       </Router>
     );

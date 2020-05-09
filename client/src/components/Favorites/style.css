@@ -1,6 +1,6 @@
 body {
     min-height: calc(100vh - 70px);
-    background: url("../../Images/hike-2.jpg") no-repeat center center fixed; 
+    background: url("../Images/hike-2.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

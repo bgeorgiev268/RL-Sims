@@ -1,28 +1,66 @@
 import React, { Component } from 'react';
-import Navbar from '../../Navbar/NavBar';
-import Footer from '../../Footer/index';
+import Footer from '../Footer/index';
 import './style.css';
+import Title from "../Title/index"
 import axios from 'axios';
-import Card from '../../Card/index';
+import Card from '../Card/index';
 import OwlCarousel from 'react-owl-carousel2';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+
+const options = {
+    items: 1,
+    nav: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout: 3500,
+    loop: true,
+    margin: 0,
+    responsive: {
+        0: {
+            items: 1,
+            nav: true
+        },
+        800: {
+            items: 1,
+            nav: true
+        },
+        1000: {
+            items: 1,
+            nav: true
+        },
+        1200: {
+            items: 1,
+            nav: true
+        },
+        1600: {
+            items: 1,
+            nav: true
+        }
+    }
+};
 
 export class Favorites extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            fav: []
+            fav: [],
+            username: this.props.username
         }
+        this.loadFavs = this.loadFavs.bind(this);
     };
     componentDidMount() {
         this.loadFavs();
     }
 
+
+
     loadFavs() {
-        axios.get("/favorites").then(res => {
+        axios.get("/user/favorites").then(res => {
             const userFav = [];
+            console.log( this.props.username);
+            console.log("UserDB: " + res.data[0].user);
             for (let i = 0; i < res.data.length; i++) {
                 if (res.data[i].user === this.props.username) {
                     userFav.push({
@@ -34,6 +72,7 @@ export class Favorites extends Component {
                     })
                 }
             }
+            console.log(res, "129089--dh-jasd-u-1uie-uas-id-i 1")
             this.setState({ fav: userFav });
         })
     }
@@ -41,14 +80,12 @@ export class Favorites extends Component {
     render() {
         return (
             <div className="pimg7">
-                <Navbar />
-                <h1>Favorites Page</h1>
-                <section className="section">
                     <div className="row" id="section">
-                        <Title>Hiking</Title>
+                        <Title>Favorites</Title>
                         <OwlCarousel ref="car" options={options}>
                             {this.state.fav.map(fav => (
                                 <Card
+                                    username={this.props.username}
                                     id={fav.id}
                                     key={fav.id}
                                     name={fav.name}
@@ -60,7 +97,7 @@ export class Favorites extends Component {
                             ))}
                         </OwlCarousel>
                     </div>
-                </section>
+                
                 <Footer url="favorite" />
             </div>
         )
