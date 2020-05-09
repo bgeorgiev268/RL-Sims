@@ -8,3 +8,11 @@ body {
     color: white;
 }
 
+#djangoUnchained {
+    background: rgba(0, 0, 0, 0.575);
+    width: 70%;
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: 15px;
+}

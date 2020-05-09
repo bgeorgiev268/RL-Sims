@@ -12,7 +12,7 @@ class Card extends Component {
   addFav(event) {
     event.preventDefault();
 
-    axios.post("/user/favorites", {
+    axios.post("/user/"+ this.props.username +"/favorites", {
       user: this.props.username,
       name: this.props.name,
       location: this.props.location,
