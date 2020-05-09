@@ -68,38 +68,39 @@ router.post('/logout', (req, res) => {
     }
 })
 
-router.post("/favorites", (req, res) => {
-    const newFav = new Fav ({
-        user: req.body.user,
-        name: req.body.name,
-        location: req.body.location,
-        star: req.body.star,
-        url: req.body.url,
-        image: req.body.image
+router.post("/:user/favorites", (req, res) => {
+    const user = req.params.user;
+
+    Fav.create(req.body)
+    .then(function(dbFav) {
+      // If a Note was created successfully, find one User (there's only one) and push the new Note's _id to the User's `notes` array
+      // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
+      // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+      return User.findOneAndUpdate({username: user}, { $push: { favorites: dbFav._id } }, { new: true });
+    })
+    .then(function(dbUser) {
+      // If the User was updated successfully, send it back to the client
+      res.json(dbUser);
+    })
+    .catch(function(err) {
+      // If an error occurs, send it back to the client
+      res.json(err);
     });
 
-    newFav.save((err, saveFav) => {
-        if (err) return res.json(err);
-        res.json(saveFav);
-    })
 
 })
 
-// Currently not functioning as intended
-// router.get('/favorites', (req, res, next) => {
-//     console.log('===== Favorites!!======')
-//     console.log(res.req)
-//     // res.json({ favorites: res.data })
-    
-// })
 
-router.get("/favorites", function(req, res) {
+router.get("/:user/favorites", function(req, res) {
+
+    const user = req.params.user;
 // Find all Users
-    Fav.find({})
-        .then(favorites => {
+    User.find({username: user}).populate("favorites")
+        .then(user => {
             // If all Users are successfully found, send them back to the client
-            console.log(favorites)
-            res.json(favorites);
+            
+            res.json(user[0].favorites);
+            console.log(user[0].favorites, "123454321")
         })
         .catch(err => {
             // If an error occurs, send the error back to the client
