@@ -4,7 +4,8 @@ var Schema = mongoose.Schema;
 
 var FavoritesSchema = new Schema({
   user: {
-    type: String
+    type: String,
+    require: true
   },
   name: {
     type: String,
