@@ -6,7 +6,7 @@ router.use("/user", userRoutes);
 // If no API routes are hit, send the React app
 
 
-router.get('/', (req, res) => {
+router.get('/', (req, res, next) => {
   console.log('===== user!!======')
   console.log(req.user)
   if (req.user) {
