@@ -25,6 +25,7 @@
   "homepage": "https://github.com/bgeorgiev268/RL-Sims#readme",
   "devDependencies": {
     "concurrently": "^5.2.0",
+    "dotenv": "^8.2.0",
     "nodemon": "^2.0.3"
   },
   "dependencies": {

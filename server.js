@@ -48,6 +48,9 @@ app.use(express.static(path.join(__dirname, 'build')));
  })
 })
 
+app.get('*', (req, res) => {
+	res.sendFile(path.join(publicPath, 'index.html'));
+ });
 
 // Passport
 app.use(passport.initialize())
