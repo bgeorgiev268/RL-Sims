@@ -6,14 +6,14 @@ router.use("/user", userRoutes);
 // If no API routes are hit, send the React app
 
 
-router.get('/', (req, res, next) => {
+router.get('/', (req, res) => {
   console.log('===== user!!======')
   console.log(req.user)
   if (req.user) {
       res.json({ user: req.user })
   } else {
     console.log("Oh snap, passport sucks!")
-      res.redirect('/')
+      res.json({ user: null })
   }
 })
 
