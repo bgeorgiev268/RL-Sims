@@ -13,7 +13,7 @@ router.get('/', (req, res, next) => {
       res.json({ user: req.user })
   } else {
     console.log("Oh snap, passport sucks!")
-      res.json({ user: null })
+      res.redirect('/')
   }
 })
 
