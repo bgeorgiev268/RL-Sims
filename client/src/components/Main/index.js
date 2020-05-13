@@ -58,40 +58,47 @@ export class Main extends Component {
   };
 
   componentDidMount() {
-    this.ipRequest();
+    // this.ipRequest();
+    this.locationSnoop()
     this.apiCall();
+   
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    // this.apiCall();
-    if (this.state.lat !== prevState.lat || this.state.lon !== prevState.lon) {
-      this.apiCall();
-    }
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   // this.apiCall();
+  //   if (this.state.lat !== prevState.lat || this.state.lon !== prevState.lon) {
+  //     this.apiCall();
+  //   }
+  // }
 
-  ipRequest() {
-    const IP_KEY = process.env.REACT_APP_IP_KEY || REACT_APP_IP_KEY;
-    fetch("http://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
-      .then(results => {
-        return results.json();
-      })
-      .then(res => {
-        console.log("IP results");
-        console.log(res.latitude + " " + res.longitude)
-        this.setState({ lat: res.latitude, lon: res.longitude })
-        // this.apiCall();
-        // console.log(this.state.lat);
-      });
-  }
+  // ipRequest() {
+  //   const IP_KEY = process.env.REACT_APP_IP_KEY;
+  //   fetch("https://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
+  //     .then(results => {
+  //       return results.json();
+  //     })
+  //     .then(res => {
+  //       console.log("IP results");
+  //       console.log(res.latitude + " " + res.longitude)
+  //       this.setState({ lat: res.latitude, lon: res.longitude })
+  //       // this.apiCall();
+  //       // console.log(this.state.lat);
+  //     });
+  // }
 
+  locationSnoop() {
+    fetch('http://api.wipmania.com/jsonp?callback=?', function (data){
+  console.log(data.latitude)
+  });
+  }
 
 
   apiCall() {
     // console.log(this.state.lat + 'AI)UHJOIHASUJSPIHPIFJASPIOJD)A')
-    const lat = this.state.lat ? this.state.lat : "40.0274";
-    const lon = this.state.lon ? this.state.lon : "-105.2519";
-    const KEY = process.env.REACT_APP_ACTIVITY_KEY || REACT_APP_ACTIVITY_KEY;
-    const MNT_KEY = process.env.REACT_APP_MOUNTAIN_KEY || REACT_APP_MOUNTAIN_KEY;
+    const lat = this.state.lat ? this.state.lat : "33.4358";
+    const lon = this.state.lon ? this.state.lon : "-112.0596";
+    const KEY = process.env.REACT_APP_ACTIVITY_KEY; 
+    const MNT_KEY = process.env.REACT_APP_MOUNTAIN_KEY;
 
     fetch('https://www.hikingproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=50&maxResults=16&key=' + KEY)
       .then(results => {
