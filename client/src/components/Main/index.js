@@ -71,7 +71,7 @@ export class Main extends Component {
 
   ipRequest() {
     const IP_KEY = process.env.REACT_APP_IP_KEY;
-    fetch("http://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
+    fetch("https://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
       .then(results => {
         return results.json();
       })
