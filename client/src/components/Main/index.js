@@ -55,21 +55,22 @@ export class Main extends Component {
       lon: "",
       username: this.props.username
     }
+    this.getLocation = this.getLocation.bind(this)
   };
 
   componentDidMount() {
     // this.ipRequest();
-    this.locationSnoop()
+    // this.locationSnoop()
     this.apiCall();
-   
+
   }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   // this.apiCall();
-  //   if (this.state.lat !== prevState.lat || this.state.lon !== prevState.lon) {
-  //     this.apiCall();
-  //   }
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    // this.apiCall();
+    if (this.state.lat !== prevState.lat || this.state.lon !== prevState.lon) {
+      this.apiCall();
+    }
+  }
 
   // ipRequest() {
   //   const IP_KEY = process.env.REACT_APP_IP_KEY;
@@ -86,18 +87,30 @@ export class Main extends Component {
   //     });
   // }
 
-  locationSnoop() {
-    fetch('http://api.wipmania.com/jsonp?callback=?', function (data){
-  console.log(data.latitude)
-  });
+  getLocation() {
+    
+    navigator.geolocation.getCurrentPosition( position => {
+      this.setState({ 
+        lat: position.coords.latitude, 
+        lon: position.coords.longitude 
+      });
+      console.log("Latitude: " + position.coords.latitude + "\nLongitude: " + position.coords.longitude)
+    });
+    
+    console.log("LOCATION")
+
   }
+
+
+
+
 
 
   apiCall() {
     // console.log(this.state.lat + 'AI)UHJOIHASUJSPIHPIFJASPIOJD)A')
-    const lat = this.state.lat ? this.state.lat : "33.4358";
-    const lon = this.state.lon ? this.state.lon : "-112.0596";
-    const KEY = process.env.REACT_APP_ACTIVITY_KEY; 
+    const lat = this.state.lat ? this.state.lat : "39.5501";
+    const lon = this.state.lon ? this.state.lon : "-105.7821";
+    const KEY = process.env.REACT_APP_ACTIVITY_KEY;
     const MNT_KEY = process.env.REACT_APP_MOUNTAIN_KEY;
 
     fetch('https://www.hikingproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=50&maxResults=16&key=' + KEY)
@@ -191,6 +204,7 @@ export class Main extends Component {
         {/* This is section One image */}
         <div className="pimg1">
           <h1 className="project text-center">RL Sims</h1>
+          {this.state.lat ? "" : <button onClick={this.getLocation}>Your Location</button>}
         </div>
 
         {/* This is section One */}
