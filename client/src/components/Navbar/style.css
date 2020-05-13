@@ -11,8 +11,36 @@ link {
   background-color: #051622;
 }
 
+.text-secondary {
+  font-size: 1em;
+}
+
 .navbar-section .btn {
   color: #1BA098;
   background-color: #051622;
 }
 
+.navbar-section {
+  margin-left: 70%;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+  .navbar {
+    width: 100%;
+
+  }
+  .navbar-section {
+    margin-left: 0%;
+  }
+
+  .text-secondary {
+    
+  }
+  /* phones */
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+  /* portrait phones */
+}

@@ -183,7 +183,7 @@ export class Main extends Component {
 
         {/* This is section One image */}
         <div className="pimg1">
-          <h1 className="project text-center">RL Sims</h1>
+          <h1 className="project text-center"></h1>
         </div>
 
         {/* This is section One */}

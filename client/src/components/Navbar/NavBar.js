@@ -66,6 +66,8 @@ class Navbar extends Component {
                     <span className="text-secondary spanElement">Sign Up</span>
                   </Link>
                 </section>
+
+                
               )}
           </div>
          
