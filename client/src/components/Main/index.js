@@ -94,10 +94,10 @@ export class Main extends Component {
         lat: position.coords.latitude, 
         lon: position.coords.longitude 
       });
-      console.log("Latitude: " + position.coords.latitude + "\nLongitude: " + position.coords.longitude)
+      // console.log("Latitude: " + position.coords.latitude + "\nLongitude: " + position.coords.longitude)
     });
     
-    console.log("LOCATION")
+    // console.log("LOCATION")
 
   }
 
@@ -157,8 +157,8 @@ export class Main extends Component {
       .then(results => {
         return results.json();
       }).then(data => {
-        console.log("STUFF@@!#$!@")
-        console.log(data.routes)
+        // console.log("STUFF@@!#$!@")
+        // console.log(data.routes)
         var climbRoute = [];
         for (var i = 0; i < data.routes.length; i++) {
           climbRoute.push({
@@ -191,7 +191,7 @@ export class Main extends Component {
             activity: "skiing"
           })
         }
-        console.log("ski trails: ", skiTrail);
+        // console.log("ski trails: ", skiTrail);
         this.setState({ skiing: skiTrail })
 
       })
@@ -203,7 +203,7 @@ export class Main extends Component {
 
         {/* This is section One image */}
         <div className="pimg1">
-          <h1 className="project text-center">RL Sims</h1>
+          <h1 className="project text-center">RL Outdoors</h1>
           {this.state.lat ? "" : <button onClick={this.getLocation}>Your Location</button>}
         </div>
 
