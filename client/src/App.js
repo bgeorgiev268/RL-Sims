@@ -10,7 +10,6 @@ import LoginForm from './components/Login/login-form';
 import Navbar from './components/Navbar/NavBar'
 import Favorites from "./components/Favorites/index";
 
-
 class App extends Component {
   constructor() {
     super()
