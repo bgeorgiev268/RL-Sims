@@ -70,7 +70,7 @@ export class Main extends Component {
   }
 
   ipRequest() {
-    const IP_KEY = REACT_APP_IP_KEY;
+    const IP_KEY = env.REACT_APP_IP_KEY;
     fetch("http://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
       .then(results => {
         return results.json();
@@ -90,8 +90,8 @@ export class Main extends Component {
     // console.log(this.state.lat + 'AI)UHJOIHASUJSPIHPIFJASPIOJD)A')
     const lat = this.state.lat ? this.state.lat : "40.0274";
     const lon = this.state.lon ? this.state.lon : "-105.2519";
-    const KEY = REACT_APP_ACTIVITY_KEY; 
-    const MNT_KEY = REACT_APP_MOUNTAIN_KEY;
+    const KEY = env.REACT_APP_ACTIVITY_KEY; 
+    const MNT_KEY = env.REACT_APP_MOUNTAIN_KEY;
 
     fetch('https://www.hikingproject.com/data/get-trails?lat=' + lat + '&lon=' + lon + '&maxDistance=50&maxResults=16&key=' + KEY)
       .then(results => {
