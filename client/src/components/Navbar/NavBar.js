@@ -8,19 +8,21 @@ class Navbar extends Component {
     super(props)
     this.logout = this.logout.bind(this)
     this.state = {
-      username: ''
+      username: '',
+      redirectTo: null
     }
   }
 
-  logout(event) {
-    event.preventDefault()
+  logout() {
+    // event.preventDefault()
     console.log('logging out')
     axios.post('/user/logout').then(response => {
       console.log(response.data)
       if (response.status === 200) {
         this.props.updateUser({
           loggedIn: false,
-          username: null
+          username: null,
+          redirectTo: "/"
         })
       }
     }).catch(error => {
@@ -32,7 +34,7 @@ class Navbar extends Component {
   render() {
     const loggedIn = this.props.loggedIn;
     console.log('navbar render, props: ')
-    console.log(this.props.username, "AIHF)IHA)IHD)IH)F*UA)SU)U)*U!#)*U)AHSD)AHJ");
+    console.log("User: " + this.props.username);
 
     return (
       <div>
@@ -48,7 +50,7 @@ class Navbar extends Component {
                 <Link to="/favorites" className="btn btn-link">
                     <span className="text-secondary spanElement"><span className="spanElement">{this.props.username}'s</span> Favorites</span>
                   </Link>
-                <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
+                <Link to="/" className="btn btn-link text-secondary" onClick={this.logout}>
                   <span className="text-secondary spanElement">logout</span></Link>
                   
 
