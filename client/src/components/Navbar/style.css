@@ -6,13 +6,18 @@ link {
   color: #051622;
 }
 
-.navbar {
+.navbar-fixed {
+  position: fixed;
+  top: 0;
   color: #051622;
   background-color: #051622;
+  height: 80px;
 }
 
 .text-secondary {
-  font-size: 1em;
+  line-height: 3.4rem;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .navbar-section .btn {
@@ -24,7 +29,15 @@ link {
   margin-left: 70%;
 }
 
+.logo {
+  position: absolute;
+  /* float: left; */
+  height: 100px;
+  width: 180px;
+  left: -30px;
+  top: -8px;
 
+}
 
 @media only screen and (max-width: 900px) {
   .navbar {
@@ -35,9 +48,7 @@ link {
     margin-left: 0%;
   }
 
-  .text-secondary {
-    
-  }
+  
   /* phones */
 }
 
