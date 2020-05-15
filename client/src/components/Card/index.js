@@ -12,14 +12,14 @@ class Card extends Component {
   addFav(event) {
     event.preventDefault();
 
-    axios.post("/favorites", {
+    axios.post("/user/"+ this.props.username +"/favorites", {
       user: this.props.username,
       name: this.props.name,
       location: this.props.location,
       star: this.props.star,
       url: this.props.url,
       image: this.props.image
-    }).then(res => console.log("success!"))
+    }).then(() => console.log("success!"))
     .catch(error => {
       console.log('login error: ')
       console.log(error);
@@ -27,13 +27,13 @@ class Card extends Component {
     })
 
     // db.create()
-    console.log({ Favorites: {
-      user: this.props.username,
-      name: this.props.name,
-      location: this.props.location,
-      star: this.props.star,
-      url: this.props.url
-    }});
+    // console.log({ Favorites: {
+    //   user: this.props.username,
+    //   name: this.props.name,
+    //   location: this.props.location,
+    //   star: this.props.star,
+    //   url: this.props.url
+    // }});
   };
 
 
