@@ -14,7 +14,8 @@ export class Favorites extends Component {
         super(props);
         this.state = {
             fav: [],
-            username: this.props.username
+            username: this.props.username,
+            favPage: true
         }
         this.loadFavs = this.loadFavs.bind(this);
     };
@@ -27,6 +28,7 @@ export class Favorites extends Component {
     loadFavs() {
         axios.get("/user/" + this.props.username + "/favorites").then(res => {
             const userFav = [];
+            console.log(res.data);
             // console.log( this.props.username);
             // console.log("UserDB: " + res.data[0].user);
             for (let i = 0; i < res.data.length; i++) {
@@ -37,7 +39,7 @@ export class Favorites extends Component {
                     star: res.data[i].star,
                     url: res.data[i].url,
                     image: res.data[i].image,
-                    id: i + 1
+                    id: res.data[i]._id
                 })
                 // }
             }
@@ -54,6 +56,8 @@ export class Favorites extends Component {
                     <div className="row">
                         {this.state.fav.map(fav => (
                             <Card classname={"col m3"}
+                                loadFavs={this.loadFavs}
+                                remove= {true}
                                 username={this.props.username}
                                 id={fav.id}
                                 key={fav.id}

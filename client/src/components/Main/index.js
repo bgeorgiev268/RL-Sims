@@ -59,33 +59,17 @@ export class Main extends Component {
   };
 
   componentDidMount() {
-    // this.ipRequest();
-    // this.locationSnoop()
     this.apiCall();
 
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // this.apiCall();
     if (this.state.lat !== prevState.lat || this.state.lon !== prevState.lon) {
       this.apiCall();
     }
   }
 
-  // ipRequest() {
-  //   const IP_KEY = process.env.REACT_APP_IP_KEY;
-  //   fetch("https://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
-  //     .then(results => {
-  //       return results.json();
-  //     })
-  //     .then(res => {
-  //       console.log("IP results");
-  //       console.log(res.latitude + " " + res.longitude)
-  //       this.setState({ lat: res.latitude, lon: res.longitude })
-  //       // this.apiCall();
-  //       // console.log(this.state.lat);
-  //     });
-  // }
+
 
   getLocation() {
     
