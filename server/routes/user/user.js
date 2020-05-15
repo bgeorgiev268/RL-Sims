@@ -108,6 +108,22 @@ router.get("/:user/favorites", function(req, res) {
         });
 });
 
+router.delete("/:user/favorites/:id", (req, res) => {
+    const id = req.params.id;
+    const user = req.params.user;
+    console.log(id)
+
+    // User.find({username: user}).populate("favorites")
+    // .then( dbFav => {
+        Fav.findByIdAndRemove(id, (err) => {
+            if (err) return res.status(500).send(err);
+        });
+        console.log("Success!")
+    // })
+    
+    
+})
+
 router.get('/profile:user', (req, res, next) => {
     console.log('===== user!!======')
     console.log(req.user)
