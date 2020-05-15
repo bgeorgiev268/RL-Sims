@@ -27,7 +27,7 @@ scroll = normal
 }
 
 .pimg1 {
-  background-image: url('../Images/hiking-2.jpg');
+  background-image: url('../Images/background-full.jpg');
   height: 1100px;
 }
 
@@ -65,6 +65,16 @@ scroll = normal
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .pimg1, .pimg2, .pimg3, .pimg4, .pimg5 {
+    max-width: 100%;
+  }
+    .pimg1 {
+  background-image: url('../Images/background-phone.jpg');
+  height: 1100px;
+
+}
+}
 .project {
   color: #DEB992;
   font-weight: 600;
