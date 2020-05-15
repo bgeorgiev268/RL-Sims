@@ -39,7 +39,7 @@ class Navbar extends Component {
     return (
       <div>
 
-        <nav className="navbar " id="nav-container">
+        <nav className="navbar-fixed" id="nav-container">
           <div className="col-4" >
             {loggedIn ? (
               <div className="align">
@@ -48,7 +48,7 @@ class Navbar extends Component {
                     <span className="text-secondary spanElement">Home</span>
                   </Link>
                 <Link to="/favorites" className="btn btn-link">
-                    <span className="text-secondary spanElement"><span className="spanElement">{this.props.username}'s</span> Favorites</span>
+                    <span className="text-secondary spanElement"><span className="spanElement2">{this.props.username}'s</span> Favorites</span>
                   </Link>
                 <Link to="/" className="btn btn-link text-secondary" onClick={this.logout}>
                   <span className="text-secondary spanElement">logout</span></Link>

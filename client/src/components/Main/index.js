@@ -188,8 +188,7 @@ export class Main extends Component {
         {/* This is section One image */}
         <div className="pimg1">
 
-          <h1 className="project text-center">RL Outdoors</h1>
-          {this.state.lat ? "" : <button onClick={this.getLocation}>Your Location</button>}
+          {this.state.lat ? "" : <button onClick={this.getLocation} className="koalas">Your Location</button>}
 
         </div>
 

@@ -27,8 +27,8 @@ scroll = normal
 }
 
 .pimg1 {
-  background-image: url('../Images/background-full.jpg');
-  height: 1100px;
+  background-image: url('../Images/hiking-2.jpg');
+  height: 1400px;
 }
 
 .pimg2 {
@@ -101,6 +101,24 @@ span {
   color: #DEB992;
 }
 
-.spanElement {
+.koalas {
+  position: fixed;
+  z-index: 100000;
+  /* margin-top: 65px; */
+  top: 15px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: black;
+  color: #DEB992;
   font-size: 18px;
+  font-weight: bold;
+}
+
+.koalas:hover {
+  background-color: rgb(22, 22, 22);
+  cursor: pointer;
+}
+
+.spanElement2 {
+  font-size: 24px;
 }
