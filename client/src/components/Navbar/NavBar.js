@@ -41,6 +41,7 @@ class Navbar extends Component {
 
         <nav className="navbar-fixed" id="nav-container">
           <div className="col-4" >
+            <div><img src="https://i.imgur.com/eKhxhl8.png" className="logo" alt="site logo" /></div>
             {loggedIn ? (
               <div className="align">
               <section className="navbar-section">

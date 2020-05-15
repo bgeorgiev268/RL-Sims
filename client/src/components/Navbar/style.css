@@ -29,7 +29,15 @@ link {
   margin-left: 70%;
 }
 
+.logo {
+  position: absolute;
+  /* float: left; */
+  height: 100px;
+  width: 180px;
+  left: -30px;
+  top: -8px;
 
+}
 
 @media only screen and (max-width: 900px) {
   .navbar {
@@ -40,9 +48,7 @@ link {
     margin-left: 0%;
   }
 
-  .text-secondary {
-    
-  }
+  
   /* phones */
 }
 

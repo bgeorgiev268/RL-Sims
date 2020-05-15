@@ -70,19 +70,34 @@ scroll = normal
     max-width: 100%;
   }
     .pimg1 {
-  background-image: url('../Images/background-phone.jpg');
+  /* background-image: url('../Images/background-phone.jpg'); */
   height: 1100px;
 
 }
+.koalas {
+  /* left: 0 auto; */
+  right: 5px;
+  margin-top: 67px;
+  font-size: 3px;
 }
-.project {
+}
+/* .project {
   color: #DEB992;
   font-weight: 600;
   margin: 0;
   padding-top: 7%;
   text-shadow: black 2px;
-}
+} */
 
+.project {
+  position: relative;
+
+	color: #DEB992;
+  font-size: 85px;
+  padding-top: 20%;
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+}
 
 .title {
   color: #DEB992;
