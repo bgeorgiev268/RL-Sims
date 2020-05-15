@@ -55,11 +55,14 @@ export class Main extends Component {
       lon: "",
       username: this.props.username
     }
+    this.getLocation = this.getLocation.bind(this)
   };
 
   componentDidMount() {
-    this.ipRequest();
+    // this.ipRequest();
+    // this.locationSnoop()
     this.apiCall();
+
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -69,27 +72,44 @@ export class Main extends Component {
     }
   }
 
-  ipRequest() {
-    const IP_KEY = process.env.REACT_APP_IP_KEY;
-    fetch("http://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
-      .then(results => {
-        return results.json();
-      })
-      .then(res => {
-        console.log("IP results");
-        console.log(res.latitude + " " + res.longitude)
-        this.setState({ lat: res.latitude, lon: res.longitude })
-        // this.apiCall();
-        // console.log(this.state.lat);
+  // ipRequest() {
+  //   const IP_KEY = process.env.REACT_APP_IP_KEY;
+  //   fetch("https://api.ipstack.com/check?access_key=" + IP_KEY + "&format=1")
+  //     .then(results => {
+  //       return results.json();
+  //     })
+  //     .then(res => {
+  //       console.log("IP results");
+  //       console.log(res.latitude + " " + res.longitude)
+  //       this.setState({ lat: res.latitude, lon: res.longitude })
+  //       // this.apiCall();
+  //       // console.log(this.state.lat);
+  //     });
+  // }
+
+  getLocation() {
+    
+    navigator.geolocation.getCurrentPosition( position => {
+      this.setState({ 
+        lat: position.coords.latitude, 
+        lon: position.coords.longitude 
       });
+      // console.log("Latitude: " + position.coords.latitude + "\nLongitude: " + position.coords.longitude)
+    });
+    
+    // console.log("LOCATION")
+
   }
+
+
+
 
 
 
   apiCall() {
     // console.log(this.state.lat + 'AI)UHJOIHASUJSPIHPIFJASPIOJD)A')
-    const lat = this.state.lat ? this.state.lat : "40.0274";
-    const lon = this.state.lon ? this.state.lon : "-105.2519";
+    const lat = this.state.lat ? this.state.lat : "39.5501";
+    const lon = this.state.lon ? this.state.lon : "-105.7821";
     const KEY = process.env.REACT_APP_ACTIVITY_KEY;
     const MNT_KEY = process.env.REACT_APP_MOUNTAIN_KEY;
 
@@ -137,8 +157,8 @@ export class Main extends Component {
       .then(results => {
         return results.json();
       }).then(data => {
-        console.log("STUFF@@!#$!@")
-        console.log(data.routes)
+        // console.log("STUFF@@!#$!@")
+        // console.log(data.routes)
         var climbRoute = [];
         for (var i = 0; i < data.routes.length; i++) {
           climbRoute.push({
@@ -171,7 +191,7 @@ export class Main extends Component {
             activity: "skiing"
           })
         }
-        console.log("ski trails: ", skiTrail);
+        // console.log("ski trails: ", skiTrail);
         this.setState({ skiing: skiTrail })
 
       })
@@ -183,7 +203,10 @@ export class Main extends Component {
 
         {/* This is section One image */}
         <div className="pimg1">
-          <h1 className="project text-center"></h1>
+
+          <h1 className="project text-center">RL Outdoors</h1>
+          {this.state.lat ? "" : <button onClick={this.getLocation}>Your Location</button>}
+
         </div>
 
         {/* This is section One */}

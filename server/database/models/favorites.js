@@ -4,27 +4,29 @@ var Schema = mongoose.Schema;
 
 var FavoritesSchema = new Schema({
   user: {
-    type: String
+    type: String,
+    unique: false
   },
   name: {
     type: String,
-    unique: true
+    unique: false
+
   },
   location: {
     type: String,
-
+    unique: false
   },
   star: {
     type: Number,
-
+    unique: false
   },
   url: {
     type: String,
-    unique: true
-
+    unique: false
   },
   image: {
-    type: String
+    type: String,
+    unique: false
   }
 });
 

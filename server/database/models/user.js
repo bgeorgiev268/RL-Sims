@@ -8,7 +8,7 @@ const userSchema = new Schema({
 
 	username: { type: String, unique: false, required: false },
 	password: { type: String, unique: false, required: false },
-	favorites: { type: Schema.Types.ObjectId, ref: "Favorites" }
+	favorites: [{ type: Schema.Types.ObjectId, ref: "Favorites" }]
 
 })
 

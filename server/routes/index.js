@@ -12,6 +12,7 @@ router.get('/', (req, res, next) => {
   if (req.user) {
       res.json({ user: req.user })
   } else {
+    console.log("Oh snap, passport sucks!")
       res.json({ user: null })
   }
 })

@@ -8,7 +8,7 @@ import Main from "./components/Main";
 import Signup from "./components/SignUp/sign-up"
 import LoginForm from './components/Login/login-form';
 import Navbar from './components/Navbar/NavBar'
-
+import Favorites from "./components/Favorites/index";
 
 class App extends Component {
   constructor() {
@@ -27,7 +27,7 @@ class App extends Component {
     this.getUser()
   }
 
-  updateUser (userObject) {
+  updateUser(userObject) {
     this.setState(userObject)
   }
 
@@ -55,10 +55,10 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-        <Navbar username={this.state.username} updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        {/* greet user if logged in: */}
-        {this.state.loggedIn }
-        {/* Routes to different components */}
+          <Navbar username={this.state.username} updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+          {/* greet user if logged in: */}
+          {this.state.loggedIn}
+          {/* Routes to different components */}
           <Route exact path="/" render={() => (
             <Main username={this.state.username} />
           )} />
@@ -66,15 +66,18 @@ class App extends Component {
             <LoginForm
               updateUser={this.updateUser}
             />}
-        />
-        <Route
-          path="/signup"
-          render={() =>
-            <Signup
-              signup={this.signup}
-            />}
-        />
-          {/* <Route path="/favorites" component={Favorites} /> */}
+          />
+          <Route
+            path="/signup"
+            render={() =>
+              <Signup
+                signup={this.signup}
+              />}
+          />
+          <Route path="/favorites" render={() => (
+            <Favorites username={this.state.username} />
+          )} />
+
         </div>
       </Router>
     );
