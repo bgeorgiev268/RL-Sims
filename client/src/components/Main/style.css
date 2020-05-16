@@ -4,7 +4,7 @@ body, html {
   font-size: 15px;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-weight: 500;
-  background: url("../Images/hike-2.jpg") no-repeat center center fixed; 
+  background: url("../Images/desert-2.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -55,7 +55,7 @@ scroll = normal
   text-align: center;
   padding: 20px;
   color: crimson;
-  background-color: rgba(0, 0, 0, 0.76);
+  background-color: rgba(0, 0, 0, 0.692);
 }
 
 
@@ -81,22 +81,23 @@ scroll = normal
   font-size: 3px;
 }
 }
-/* .project {
-  color: #DEB992;
-  font-weight: 600;
-  margin: 0;
-  padding-top: 7%;
-  text-shadow: black 2px;
-} */
+
+.container {
+  position: relative;
+  align-content: center;
+  top: 20%;
+}
 
 .project {
-  position: relative;
-
+  background-color: rgba(0, 0, 0, 0.479);
+  font-family: brandon-grotesque, sans-serif;
 	color: #DEB992;
-  font-size: 85px;
-  padding-top: 20%;
-	-webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+  font-size: 105px;
+  font-weight: 600;
+  border-radius: 15px; 
+  padding: 25px; 
+ 	 -webkit-text-stroke-width: 2px; 
+    -webkit-text-stroke-color: black; 
 }
 
 .title {
@@ -116,7 +117,12 @@ span {
   color: #DEB992;
 }
 
+span:hover {
+  color: white;
+}
+
 .koalas {
+  align-content: center;
   position: fixed;
   z-index: 100000;
   /* margin-top: 65px; */
@@ -127,11 +133,13 @@ span {
   color: #DEB992;
   font-size: 18px;
   font-weight: bold;
+  opacity: .8;
 }
 
 .koalas:hover {
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(75, 72, 72);
   cursor: pointer;
+  color: white;
 }
 
 .spanElement2 {
