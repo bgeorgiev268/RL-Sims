@@ -72,15 +72,15 @@ export class Main extends Component {
 
 
   getLocation() {
-    
-    navigator.geolocation.getCurrentPosition( position => {
-      this.setState({ 
-        lat: position.coords.latitude, 
-        lon: position.coords.longitude 
+
+    navigator.geolocation.getCurrentPosition(position => {
+      this.setState({
+        lat: position.coords.latitude,
+        lon: position.coords.longitude
       });
       // console.log("Latitude: " + position.coords.latitude + "\nLongitude: " + position.coords.longitude)
     });
-    
+
     // console.log("LOCATION")
 
   }
@@ -92,8 +92,8 @@ export class Main extends Component {
 
   apiCall() {
     // console.log(this.state.lat + 'AI)UHJOIHASUJSPIHPIFJASPIOJD)A')
-    const lat = this.state.lat ? this.state.lat : "39.5501";
-    const lon = this.state.lon ? this.state.lon : "-105.7821";
+    const lat = this.state.lat ? this.state.lat : "47.6062";
+    const lon = this.state.lon ? this.state.lon : "-122.3321";
     const KEY = process.env.REACT_APP_ACTIVITY_KEY;
     const MNT_KEY = process.env.REACT_APP_MOUNTAIN_KEY;
 
@@ -187,9 +187,10 @@ export class Main extends Component {
 
         {/* This is section One image */}
         <div className="pimg1">
-          <h1 className="project text-center">RL OUTDOORS</h1>
+          <div className="container">
+            <h1 className="project text-center">RL OUTDOORS</h1>
+          </div>
           {this.state.lat ? "" : <button onClick={this.getLocation} className="koalas">Your Location</button>}
-
         </div>
 
         {/* This is section One */}

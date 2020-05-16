@@ -51,22 +51,27 @@ export class Favorites extends Component {
     render() {
         return (
             <div className="pimg7">
+
+                <div id="djangoUnchained"> <Title>Favorites</Title></div>
                 <div className="row" id="section">
-                    <div id="djangoUnchained"> <Title>Favorites</Title></div>
-                    <div className="row">
+                    <div className="row center-align">
                         {this.state.fav.map(fav => (
-                            <Card classname={"col m3"}
-                                loadFavs={this.loadFavs}
-                                remove= {true}
-                                username={this.props.username}
-                                id={fav.id}
-                                key={fav.id}
-                                name={fav.name}
-                                image={fav.image}
-                                url={fav.url}
-                                location={fav.location}
-                                star={fav.star}
-                            />
+                          
+                                <div className="col m2">
+                                    <Card
+                                        loadFavs={this.loadFavs}
+                                        remove={true}
+                                        username={this.props.username}
+                                        id={fav.id}
+                                        key={fav.id}
+                                        name={fav.name}
+                                        image={fav.image}
+                                        url={fav.url}
+                                        location={fav.location}
+                                        star={fav.star}
+                                    />
+                                </div>
+                          
                         ))}
                     </div>
                 </div>
